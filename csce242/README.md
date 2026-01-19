@@ -1,12 +1,11 @@
 # Web Applications | CSCE 242 🌐
 
-## Course Information 🎓
+## Overview
+This repository contains coursework, assignments, and projects completed for **CSCE 242: Web Applications**. The course emphasizes building web applications with a focus on structure, accessibility, and maintainable design.
+
 - **Institution:** University of South Carolina  
 - **Course:** CSCE 242 Web Applications  
 - **Author:** Solomon Ellis-Summers 
-
-## Overview
-This repository contains coursework, assignments, and projects completed for **CSCE 242: Web Applications**. The course emphasizes building web applications with a focus on structure, accessibility, and maintainable design.
 
 ## Topics Covered 📚
 - Semantic HTML  
