@@ -1,45 +1,83 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <Title> Web Applications Portal | Solomon E-S </Title>      
-    </head>
+  <head>
+    <Title>Applications Portal</Title> 
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="assignments/02-basic-css/images/usc.png">
+  </head>
 
-        <body>
-            
-            <!--USC Logo-->
-            <img 
-                src="https://logos-world.net/wp-content/uploads/2023/05/University-of-South-Carolina-Logo.png" 
-                width="350"
-                alt="University of South Carolina logo"
-            >
-            
-            <!--main heading-->
-            <h1>Web Applications | CSCE 242</h1>
-            
-            <h2>Solomon Ellis-Summers</h2>
+  <body id="page">
+    <div id="content">
 
-            <hr style="border: 0; border-top: 1px solid #D9D9D6; margin: 1em 0;">
-            
-            <h2>Assignments</h2>
-            
-            <hr style="border: 0; border-top: 1px solid #D9D9D6; margin: 1em 0;">
-            
-            <!--course description-->
-            <p>
-                CSCE 242 focuses on the fundamentals of building modern web applications; 
-                the course introduces core web technology used in client server environments.
-                Topics include creating and styling websites with HTML, CSS, and JavaScript. 
-                The course also covers working with structured data such as JSON and applying object 
-                oriented conepts in JavaScript. By the end of the semester, the goal is to have a an
-                understanding of how client side and server side components interact to form a complete 
-                web application. 
-            </p>
-            
-            <ol>
-                <li><a href="assignments/01-basic-html/index.html">HTML Basics</a></li>
-            </ol>
+      <!--start main-header-->  
+      <header id="header">
+        <!--USC Logo-->
+        <img
+          id="usc-logo"
+          src="https://logos-world.net/wp-content/uploads/2023/05/University-of-South-Carolina-Logo.png"
+          alt="University of South Carolina logo"
+        />
 
-        </body>
+        <span id="vertical-divider"></span>
+
+        <div id="header-text">
+          <!--word heading-->
+          <h1 id="main-heading">Web Applications | CSCE 242</h1>
+          <h2 id="name-heading">Solomon Ellis-Summers</h2>
+        </div>
+      </header>
+      <!--end main-header-->
+
+      <hr class="divider" />
+
+      <!--course description-->
+      <section id="course-section">
+        <h2 id="course-heading">Course Description</h2>
+
+        <p id="course-description">
+          CSCE 242 focuses on the fundamentals of building modern web applications; the course introduces core web
+          technology used in client server environments. Topics include creating and styling websites with HTML, CSS,
+          and JavaScript. The course also covers working with structured data such as JSON and applying object oriented
+          concepts in JavaScript. By the end of the semester, the goal is to understand how client side and server side
+          components interact to form a complete web application.
+        </p>
+
+        <a
+          id="repo-button"
+          href="https://github.com/SolomonRES/SolomonRES.github.io/tree/master/csce242"
+          target="_blank"
+          rel="noopener"
+        >View GitHub Repository</a>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- assignments -->
+      <section id="assignments-section">
+        <h2 id="assignments-heading">Assignments</h2>
+
+        <ol id="assignments-list">
+          <li class="assignment-item">
+            <a
+              id="assignment-01"
+              class="assignment-link"
+              href="assignments/01-basic-html/index.html"
+              target="_blank"
+            >HTML Basics</a>
+          </li>
+
+          <li class="assignment-item">
+            <a
+              id="assignment-02"
+              class="assignment-link"
+              href="assignments/02-basic-css/index.html"
+              target="_blank"
+            >CSS Basics</a>
+          </li>
+        </ol>
+      </section>
+
+    </div>
+  </body>
 
 </html>

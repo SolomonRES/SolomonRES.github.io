@@ -1,0 +1,125 @@
+:root {
+  --garnet: #73000a;
+  --garnet-dark: #4f0007;
+  --text: #1b1b1b;
+  --grey: #5a5a5a;
+
+  --card: rgba(255, 255, 255, 0.85);
+  --border: #d9d9d6;
+
+  --table-head: #73000a;
+  --table-row: #f6f6f7;
+  --table-row-alt: #eeeeef;
+}
+
+/* base reset */
+* {
+  box-sizing: border-box;
+}
+
+/* page background and font */
+body#page {
+  margin: 0;
+  padding: 28px;
+  color: var(--text);
+  font-family: Helvetica, sans-serif;
+  line-height: 1.7;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.80),
+      rgba(255, 255, 255, 1)
+    ),
+    url("../images/usc-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* content container */
+#content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 22px 26px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+/* header main layout */
+#header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+/* header text */
+#header-text h1 {
+  margin: 0;
+  font-size: 2.1rem;
+  color: var(--garnet);
+  letter-spacing: 0.3px;
+  text-align: left;
+}
+
+#header-text h2 {
+  margin: 4px 0 0 0;
+  font-size: 1.35rem;
+  color: var(--gray);
+  font-weight: 650;
+  text-align: left;
+}
+
+/* logo row */
+#logo-row {
+  display: flex;
+  gap: 14px;
+}
+
+/* logos (usc & css)*/
+#img-one,
+#img-two {
+  width: 100px;
+  height: auto;
+  padding: 8px;
+  background: #ffffff;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+}
+
+/* paragraphs */
+p {
+  margin: 14px 0;
+}
+
+/* table */
+#data-table {
+  width: 100%;
+  margin-top: 22px;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid var(--border);
+}
+
+#data-table th,
+#data-table td {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+#data-table th {
+  background: var(--table-head);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+#data-table tr:nth-child(even) td {
+  background: var(--table-row);
+}
+
+#data-table tr:nth-child(odd) td {
+  background: var(--table-row-alt);
+}
