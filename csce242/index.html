@@ -8,13 +8,12 @@
 
   <body id="page">
     <div id="content">
-
       <!--start main-header-->  
       <header id="header">
         <!--USC Logo-->
         <img
           id="usc-logo"
-          src="https://logos-world.net/wp-content/uploads/2023/05/University-of-South-Carolina-Logo.png"
+          src="assets/usc-logo.png"
           alt="University of South Carolina logo"
         />
 
@@ -30,53 +29,208 @@
 
       <hr class="divider" />
 
-      <!--course description-->
-      <section id="course-section">
-        <h2 id="course-heading">Course Description</h2>
+      <!-- course description -->
+      <section id="course-section" class="section">
+        <div class="course-card">
+          <div class="course-row">
+            <div class="course-left">
+              <h2 id="course-heading">Course Description</h2>
+              <p id="course-description">
+                CSCE 242 covers building modern web applications using HTML, CSS,
+                JavaScript, and structured data such as JSON.
+              </p>
+            </div>
 
-        <p id="course-description">
-          CSCE 242 focuses on the fundamentals of building modern web applications; the course introduces core web
-          technology used in client server environments. Topics include creating and styling websites with HTML, CSS,
-          and JavaScript. The course also covers working with structured data such as JSON and applying object oriented
-          concepts in JavaScript. By the end of the semester, the goal is to understand how client side and server side
-          components interact to form a complete web application.
-        </p>
+            <div class="course-right">
+              <a
+                id="repo-button"
+                href="https://github.com/SolomonRES/SolomonRES.github.io/tree/master/csce242"
+                target="_blank"
+                rel="noopener"
+              >
+                View GitHub Repository
+              </a>
+            </div>
+          </div>
+        </div>
 
-        <a
-          id="repo-button"
-          href="https://github.com/SolomonRES/SolomonRES.github.io/tree/master/csce242"
-          target="_blank"
-          rel="noopener"
-        >View GitHub Repository</a>
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Topic</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>HTML</td>
+                <td>Semantic structure and accessibility</td>
+              </tr>
+              <tr>
+                <td>CSS</td>
+                <td>Layouts, spacing, responsive design</td>
+              </tr>
+              <tr>
+                <td>JavaScript</td>
+                <td>Interactivity and dynamic content</td>
+              </tr>
+              <tr>
+                <td>JSON</td>
+                <td>Structured data for web apps</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <hr class="divider" />
 
       <!-- assignments -->
-      <section id="assignments-section">
+      <section id="assignments-section" class="section">
         <h2 id="assignments-heading">Assignments</h2>
 
-        <ol id="assignments-list">
-          <li class="assignment-item">
+        <div class="grid">
+          <article class="card">
             <a
-              id="assignment-01"
-              class="assignment-link"
+              class="card-hit"
               href="assignments/01-basic-html/index.html"
               target="_blank"
-            >HTML Basics</a>
-          </li>
+              rel="noopener"
+            >
+              <div class="card-media card-media-wide">
+                <img
+                  class="card-img"
+                  src="assets/html-page.png"
+                  alt="HTML Basics screenshot"
+                />
+                <div class="card-overlay">
+                  <img src="assets/html.png" class="card-icon" alt="HTML icon" />
+                  <span class="card-overlay-text">Open</span>
+                </div>
+              </div>
 
-          <li class="assignment-item">
+              <div class="card-body">
+                <h3 class="card-title">HTML Basics</h3>
+                <p class="card-desc">
+                  Starter page using core HTML elements and semantic markup.
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <article class="card">
             <a
-              id="assignment-02"
-              class="assignment-link"
+              class="card-hit"
               href="assignments/02-basic-css/index.html"
               target="_blank"
-            >CSS Basics</a>
-          </li>
-        </ol>
+              rel="noopener"
+            >
+              <div class="card-media card-media-wide">
+                <img
+                  class="card-img"
+                  src="assets/css-page.png"
+                  alt="CSS Basics screenshot"
+                />
+                <div class="card-overlay">
+                  <img src="assets/css.png" class="card-icon" alt="CSS icon" />
+                  <span class="card-overlay-text">Open</span>
+                </div>
+              </div>
+
+              <div class="card-body">
+                <h3 class="card-title">CSS Basics</h3>
+                <p class="card-desc">
+                  Applied CSS styling, spacing, and visual hierarchy.
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <article class="card">
+            <a
+              class="card-hit"
+              href="assignments/03-page-layout/index.html"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="card-media card-media-wide">
+                <img
+                  class="card-img"
+                  src="assets/layout-page.png"
+                  alt="Page Layout screenshot"
+                />
+                <div class="card-overlay">
+                  <img
+                    src="assets/layout.png"
+                    class="card-icon"
+                    alt="Layout icon"
+                  />
+                  <span class="card-overlay-text">Open</span>
+                </div>
+              </div>
+
+              <div class="card-body">
+                <h3 class="card-title">Page Layout</h3>
+                <p class="card-desc">
+                  Responsive layout using Flexbox and media queries.
+                </p>
+              </div>
+            </a>
+          </article>
+        </div>
       </section>
 
+      <hr class="divider" />
+
+      <!-- project -->
+      <section id="projects-section" class="section">
+        <h2 id="projects-heading">Project</h2>
+
+        <div class="project-row">
+          <article class="card project-card-main">
+            <a class="card-hit" href="https://solomonres.github.io/csce242/" target="_blank" rel="noopener">
+              <div class="card-media card-media-wide">
+                <img
+                  class="card-img"
+                  src="assets/finlit.png"
+                  title="FinLit website preview (placeholder)"
+                ></>
+              </div>
+
+              <div class="card-body">
+                <h3 class="card-title">Website Preview</h3>
+                <p class="card-desc">FinLit project placeholder image</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="card project-card-side">
+            <a class="card-hit" href="projects/part1/FinLit.pdf" target="_blank" rel="noopener">
+              <div class="card-media card-media-portrait">
+                <img
+                  class="card-img card-img-portrait"
+                  src="assets/project.png"
+                  alt="FinLit PDF screenshot"
+                />
+                <div class="card-overlay">
+                  <img src="assets/pdf.png" class="card-icon" alt="PDF icon" />
+                  <span class="card-overlay-text">Open PDF</span>
+                </div>
+              </div>
+
+              <div class="card-body">
+                <h3 class="card-title">Documentation</h3>
+                <p class="card-desc">Project topic proposal and documentation.</p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <footer id="footer">
+        <p>© 2026 Solomon Ellis-Summers | Web Applications: CSCE 242</p>
+      </footer>
     </div>
   </body>
 

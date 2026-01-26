@@ -1,0 +1,244 @@
+:root {
+  --garnet: #73000A;
+  --darkgrey: #7e7e7e;     
+  --lightgrey: #b4b4b4;  
+  --text: #1b1b1b;
+  --white: #ffffff;
+  --frame: #ffffff;     /* used for testing */ 
+  --bg: #f8f8f8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header, nav, main, footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--bg);
+  border-left: 1px solid var(--frame);
+  border-right: 1px solid var(--frame);
+}
+
+/* header */
+header {
+  padding: 2.6rem 1rem;
+  text-align: center;
+  border-top: 1px solid var(--frame);
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--darkgrey);
+}
+
+/* navigation */
+nav {
+  background: var(--garnet);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column; /* mobile stack */
+  width: 100%;
+}
+
+nav li {
+  text-align: center;
+  border-bottom: 2px solid rgba(255,255,255,0.55);
+}
+
+nav a {
+  display: block;
+  padding: 0.9rem 1rem;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.15rem;
+}
+
+/* main */
+main { width: 100%; }
+
+/* top section */
+.top-section {
+  display: flex;
+  flex-direction: column; /* mobile */
+  width: 100%;
+  background: var(--bg);
+}
+
+.not-extremely-important-text {
+  padding: 2rem;
+}
+
+.not-extremely-important-text h2 {
+  color: var(--darkgrey);
+  margin-bottom: 1rem;
+  font-size: 1.65rem;
+  font-weight: bold;
+}
+
+/* cards area */
+.card-grid {
+  display: flex;
+  flex-direction: column; /*  for mobile */
+  gap: 1.25rem;
+  padding: 0 1rem 1.5rem 1rem;
+}
+
+/* card container is basically “invisible”  (used for testing)*/
+.card {
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+
+/* title bar */
+.card-title {
+  background: var(--darkgrey);
+  color: var(--white);
+  text-align: center;
+  padding: 0.65rem 0.5rem;
+  font-weight: bold;
+}
+
+/* mobile 200x300 box  */
+.card-placeholder {
+  width: 200px;
+  height: 300px;
+  margin: 0 auto;              /* centers box */
+  background: var(--lightgrey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.75);
+  border: 1px solid rgba(255,255,255,0.85);
+}
+
+/* Ideas section */
+.ideas-section {
+  width: 100%;
+  border-top: 1px solid var(--frame);
+}
+
+.idea-row {
+  display: flex;
+  flex-direction: column; /* mobile */
+  width: 100%;
+  border-top: 6px solid rgba(255,255,255,0.55);
+}
+
+/* text block */
+.idea-content {
+  padding: 2.25rem 3rem;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.idea-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.idea-image img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.row-1 .idea-content { background: var(--darkgrey); }
+.row-1 .idea-image   { background: var(--lightgrey); }
+
+.row-2 .idea-content { background: var(--lightgrey); }
+.row-2 .idea-image   { background: var(--darkgrey); }
+
+.row-3 .idea-content { background: var(--darkgrey); }
+.row-3 .idea-image   { background: var(--lightgrey); }
+
+/* footer */
+footer {
+  background: var(--garnet);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem;
+  margin-top: 5px;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--frame);
+}
+
+/* desktop layout */
+@media (min-width: 768px) {
+
+  /* nav becomes 4 equal columns */
+  nav ul { flex-direction: row; }
+  nav li {
+    flex: 1;
+    border-bottom: none;
+    border-right: 2px solid rgba(255,255,255,0.55);
+  }
+  nav li:last-child { border-right: none; }
+
+  /* Top section becomes 50/50 */
+  .top-section {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .not-extremely-important-text {
+    width: 50%;
+    padding: 3rem 2rem;
+  }
+
+  /* right side: (4 cards)*/
+  .card-grid {
+    width: 50%;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 0.6rem 1.25rem 1.25rem 0;
+  }
+
+    .card {
+    flex: 1
+    }
+
+
+  .card-placeholder {
+    width: 80%;
+    max-width: 240px; 
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  /* ideas section: alternating layout */
+  .idea-row {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .idea-row.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .idea-image {
+    flex: 0 0 420px;
+    padding: 0;
+  }
+
+  .idea-content {
+    flex: 1;
+  }
+}
