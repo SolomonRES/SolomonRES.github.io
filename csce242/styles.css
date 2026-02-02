@@ -71,10 +71,9 @@ body#page {
 
 /* course section */
 .course-card {
-  /* border: 0.3px solid var(--border); */
   border-radius: 14px;
   padding: 16px;
-  background: rgba(255, 255, 255, .1);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -263,13 +262,30 @@ body#page {
   font-weight: 700;
 }
 
-/* project sizing */
+/* project layout: keep 3 cards horizontal on desktop */
+.project-row {
+  flex-wrap: nowrap;
+}
+
 .project-card-main {
-  flex: 1 1 520px;
+  flex: 1 1 420px;
+  min-width: 320px;
 }
 
 .project-card-side {
-  flex: 0 0 360px;
+  flex: 0 0 280px;
+  min-width: 260px;
+}
+
+/* make FinLit preview feel smaller inside its container */
+.project-card-main .card-media-wide {
+  aspect-ratio: 16 / 10;
+}
+
+.project-card-main .card-img {
+  object-fit: contain;
+  padding: 10px;
+  background: #ffffff;
 }
 
 /* footer */
@@ -278,6 +294,18 @@ body#page {
   border-top: 1px solid var(--border);
   padding-top: 12px;
   color: #777;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .project-row {
+    flex-wrap: wrap;
+  }
+
+  .project-card-side {
+    flex: 1 1 320px;
+    min-width: 0;
+  }
 }
 
 /* mobile */

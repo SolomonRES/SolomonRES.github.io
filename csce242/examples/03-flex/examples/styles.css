@@ -1,0 +1,191 @@
+/* Main Structure */
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    background:#bde0fe;
+}
+
+#main-content {
+    width:80%;
+    margin:auto;    /* Center */
+}
+
+#main-header {
+    background:#ffafcc;
+    position: relative;
+}
+
+#content {
+
+}
+
+#sidebar {
+    background:lightcoral;
+}
+
+#main-footer {
+
+}
+
+#logo {
+    margin: 10px;
+}
+
+#login-nav {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+
+#login-nav li:after {
+    content: "|";
+}
+
+.img {
+    max-width: 100%;
+}
+
+.area {
+    background: azure;
+    position: relative;
+}
+
+.arrow {
+    font-size:  1.5em;
+    color: white;
+    position: absolute;
+    top: 32%;
+}
+
+#prev {
+    left: 5%;
+}
+
+#next {
+    right: 5%;
+}
+
+#slide-desc {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    color: white;
+    background: rgba(255, 255,255, .05);
+    padding: 5px;
+    max-width: 40%;
+}
+
+/* Square */
+#square {
+    width: 100px;
+    height: 100px;
+    background: whitesmoke;
+    
+    /* position absolute is in respecet to the uppoer right hand corner */ 
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+/* Gallery */
+#gallery section {
+    background:lightgray;
+    padding:5px;
+    border-radius:5px;
+    margin:5px;
+}
+
+#gallery section h3 {
+    text-align:center;
+}
+
+/* List */
+.item {
+    margin:5px;
+    background:#cdb4db;
+}
+.item img {
+    display:block;
+    margin:auto;
+}
+
+.area {
+    background: azure;
+    position: relative;
+}
+
+/* Navigation */
+#main-nav ul {
+    padding-left:0;     /* Remove indentation */
+}
+
+#main-nav li {
+    list-style-type:none;   /* Remove bullet */
+    background:#ffc8dd;
+    padding:5px;
+    border-bottom:1px solid #cdb4db;;
+}
+
+#main-nav a {
+    text-decoration: none;  /* Remove underline */
+}
+
+/* Typography */
+#main-header h1 {
+    text-align: center;
+    padding-top:10px;
+}
+
+/* Larger devices */
+@media (min-width: 768px) {
+    #content {
+        justify-content: space-between;
+        gap:1em;
+    }
+    
+    .columns {
+        display:flex;
+    }
+
+    .one {
+        flex:1;
+    }
+
+    .two {
+        flex:2;
+    }
+
+    .three {
+        flex:3;
+    }
+
+    .four {
+        flex:4;
+    }
+
+    #main-nav ul {
+        display:flex;
+    }
+
+    #main-nav li {
+        background:transparent;
+        flex:1;
+    }
+
+    #main-nav a {
+        color: darkslateblue;
+        border-bottom:1px solid transparent;
+    }
+
+    #main-nav a:hover {
+        border-bottom:1px solid darkslateblue;
+    }
+
+    .item img {
+        flex:1;
+    }
+
+    .item div {
+        flex:5;
+    }
+
+}
