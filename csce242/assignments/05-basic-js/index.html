@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Introduction to JavaScript</title>
+  <link href="https://www.sc.edu/favicon.ico" rel="icon"/>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="page-header">
+    <h1>Introduction to JavaScript</h1>
+    <h2>JavaScript Buttons, Functions, and More</h2>
+  </header>
+
+  <main class="grid">
+    <!-- geometry -->
+    <section id="card-geometry" class="card">
+      <h3 class="card-title">Geometry</h3>
+
+      <div class="card-content center">
+        <div id="triangle" class="triangle is-hidden"></div>
+        <p class="hint">Click this card to show the triangle.</p>
+      </div>
+    </section>
+
+    <!-- date -->
+    <section class="card">
+      <h3 class="card-title">Select A Date:</h3>
+
+      <div class="card-content">
+        <div class="field-row">
+          <label class="sr-only" for="date-input">Pick a date</label>
+          <input id="date-input" type="date" />
+        </div>
+
+        <p id="date-output" class="date-output"></p>
+      </div>
+    </section>
+
+    <!-- image -->
+    <section class="card">
+      <h3 class="card-title">Frame Image</h3>
+
+      <div class="card-content center">
+        <div id="image-frame" class="image-frame" title="Click the image">
+          <img
+            id="usc-image"
+            class="usc-image"
+            src="../../assets/usc-icon.png"
+            alt="USC icon"
+          />
+        </div>
+
+        <p class="hint">Click the logo to toggle the frame colors.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p>Solomon Ellis-Summers | Web Applications: CSCE 242</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
