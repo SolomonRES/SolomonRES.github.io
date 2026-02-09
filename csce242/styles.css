@@ -162,6 +162,10 @@ body#page {
   flex-wrap: wrap;
 }
 
+.project-row {
+  flex-wrap: nowrap;
+}
+
 .card {
   flex: 1 1 320px;
   border: 1px solid var(--border);
