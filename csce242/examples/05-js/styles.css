@@ -1,9 +1,5 @@
 /* main structure */
 
-:root {
-    --donation: 50%;
-}
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: whitesmoke;
@@ -68,18 +64,6 @@ body {
 #main-nav a {
     text-decoration: none;
 }
-/* thermonmeter */
-#Thermonmeter {
-    width: 25%;
-    height: 200px;
-    margin-right:10%;
-    border: 2px solid lightgray;
-    background:linear-gradient(0deg, #73000A 0% var(--donation), white var(--donation) 100%)
-
-
-}
-
-
 /* 
 ball-playground {
     position: relative;
