@@ -11,7 +11,7 @@ const sadSongs = {
   "Someone Like You by Adele": "hLQl3WQQoQ0",
   "Drivers License by Olivia Rodrigo": "ZmDBbnmKpqQ",
   "Fix You by Coldplay": "k4V3Mo61fJM",
-  "Something in the Orange by Zach Bryan": "lA8hKZYH_P4",
+  "Something in the Orange by Zach Bryan": "Sgx0WzeIBYk",
   "The Night We Met by Lord Huron": "KtlgYxa6BMU"
 };
 
