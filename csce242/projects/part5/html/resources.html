@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinLit - Resources & Analytics</title>
+    <link rel="icon" type="image/png" href="../../../assets/favicon.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- navigation -->
+    <nav class="nav-wrapper">
+        <div class="nav-container">
+            <div class="nav-content">
+                <a href="home.html" class="logo">
+                    <img src="../../../assets/finlit-logo.png" alt="FinLit Logo" class="logo-img-icon">
+                    <span class="logo-text">FinLit</span>
+                </a>
+                <div class="search-container">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" class="search-input" placeholder="Search modules, topics, resources...">
+                </div>
+                <div class="nav-links">
+                    <a href="learning.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                        Learning
+                    </a>
+                    <a href="tools.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                        Tools
+                    </a>
+                    <a href="markets.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                            <polyline points="16 7 22 7 22 13"></polyline>
+                        </svg>
+                        Markets
+                    </a>
+                    <a href="resources.html" class="nav-link active">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                        Resources
+                    </a>
+                </div>
+                <a href="profile.html" class="profile-link">
+                    <svg class="profile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </a>
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- mobile side panel overlay -->
+    <div class="side-panel-overlay" id="sidePanelOverlay"></div>
+    <aside class="side-panel" id="sidePanel">
+        <div class="side-panel-decoration"></div>
+        <div class="side-panel-header">
+            <a href="home.html" class="logo">
+                <img src="../../../assets/finlit-logo.png" alt="FinLit Logo" class="logo-img-icon">
+                <span class="logo-text">FinLit</span>
+            </a>
+            <button class="side-panel-close" id="sidePanelClose" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="side-panel-nav">
+            <a href="learning.html" class="side-panel-link" style="--delay: 0">
+                <div class="side-panel-icon-wrapper">
+                    <svg class="side-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                    </svg>
+                </div>
+                <div class="side-panel-link-text">
+                    <span class="side-panel-link-title">Learning</span>
+                    <span class="side-panel-link-desc">Courses & modules</span>
+                </div>
+                <svg class="side-panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <a href="tools.html" class="side-panel-link" style="--delay: 1">
+                <div class="side-panel-icon-wrapper">
+                    <svg class="side-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                    </svg>
+                </div>
+                <div class="side-panel-link-text">
+                    <span class="side-panel-link-title">Tools</span>
+                    <span class="side-panel-link-desc">Calculators & models</span>
+                </div>
+                <svg class="side-panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <a href="markets.html" class="side-panel-link" style="--delay: 2">
+                <div class="side-panel-icon-wrapper">
+                    <svg class="side-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                        <polyline points="16 7 22 7 22 13"></polyline>
+                    </svg>
+                </div>
+                <div class="side-panel-link-text">
+                    <span class="side-panel-link-title">Markets</span>
+                    <span class="side-panel-link-desc">Live data & analysis</span>
+                </div>
+                <svg class="side-panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <a href="resources.html" class="side-panel-link" style="--delay: 3">
+                <div class="side-panel-icon-wrapper">
+                    <svg class="side-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                </div>
+                <div class="side-panel-link-text">
+                    <span class="side-panel-link-title">Resources</span>
+                    <span class="side-panel-link-desc">Guides & references</span>
+                </div>
+                <svg class="side-panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <div class="side-panel-divider"></div>
+            <a href="profile.html" class="side-panel-link" style="--delay: 4">
+                <div class="side-panel-icon-wrapper">
+                    <svg class="side-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <div class="side-panel-link-text">
+                    <span class="side-panel-link-title">Profile</span>
+                    <span class="side-panel-link-desc">Account & settings</span>
+                </div>
+                <svg class="side-panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+        </nav>
+        <div class="side-panel-footer">
+            <p>&copy; 2026 FinLit</p>
+        </div>
+    </aside>
+
+    <!-- resources header -->
+    <section class="res-header">
+        <div class="grid-pattern"></div>
+        <div class="res-header-content">
+            <div class="res-badge">
+                <!-- bar-chart icon -->
+                <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+                Market Intelligence
+            </div>
+            <h1 class="res-title">Resources & Analytics</h1>
+            <p class="res-subtitle">Real-time market data, professional resources, and institutional analytics</p>
+        </div>
+    </section>
+
+    <!-- main content -->
+    <div class="res-content">
+        <div class="res-container">
+
+            <!-- market overview cards -->
+            <section class="res-overview-grid">
+                <div class="res-overview-card glass-card">
+                    <div class="res-overview-label">S&P 500</div>
+                    <div class="res-overview-row">
+                        <span class="res-overview-value">4,783.45</span>
+                        <span class="res-overview-change positive">
+                            <svg class="change-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                            +1.2%
+                        </span>
+                    </div>
+                </div>
+                <div class="res-overview-card glass-card">
+                    <div class="res-overview-label">Dow Jones</div>
+                    <div class="res-overview-row">
+                        <span class="res-overview-value">37,545.33</span>
+                        <span class="res-overview-change positive">
+                            <svg class="change-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                            +0.8%
+                        </span>
+                    </div>
+                </div>
+                <div class="res-overview-card glass-card">
+                    <div class="res-overview-label">NASDAQ</div>
+                    <div class="res-overview-row">
+                        <span class="res-overview-value">15,074.57</span>
+                        <span class="res-overview-change positive">
+                            <svg class="change-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                            +1.5%
+                        </span>
+                    </div>
+                </div>
+                <div class="res-overview-card glass-card">
+                    <div class="res-overview-label">Russell 2000</div>
+                    <div class="res-overview-row">
+                        <span class="res-overview-value">2,045.12</span>
+                        <span class="res-overview-change negative">
+                            <svg class="change-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="7" x2="17" y2="17"></line><polyline points="17 7 17 17 7 17"></polyline></svg>
+                            -0.3%
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- IB section: IPO Pipeline + M&A -->
+            <section class="res-ib-grid">
+                <!-- IPO Pipeline -->
+                <div class="res-card glass-card res-ipo-card">
+                    <div class="res-card-header">
+                        <svg class="res-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 17"></polyline>
+                            <polyline points="17 6 23 6 23 12"></polyline>
+                        </svg>
+                        <h3 class="res-card-title">IPO PIPELINE</h3>
+                    </div>
+                    <div class="ipo-list">
+                        <div class="ipo-item">
+                            <div class="ipo-item-top">
+                                <div>
+                                    <div class="ipo-company">TechCorp AI</div>
+                                    <div class="ipo-sector">Technology</div>
+                                </div>
+                                <span class="ipo-status">Filed</span>
+                            </div>
+                            <div class="ipo-item-bottom">
+                                <span class="ipo-value">$850M</span>
+                                <span class="ipo-date">Feb 5</span>
+                            </div>
+                        </div>
+                        <div class="ipo-item">
+                            <div class="ipo-item-top">
+                                <div>
+                                    <div class="ipo-company">FinServe Inc</div>
+                                    <div class="ipo-sector">Financials</div>
+                                </div>
+                                <span class="ipo-status">Pricing</span>
+                            </div>
+                            <div class="ipo-item-bottom">
+                                <span class="ipo-value">$420M</span>
+                                <span class="ipo-date">Feb 12</span>
+                            </div>
+                        </div>
+                        <div class="ipo-item">
+                            <div class="ipo-item-top">
+                                <div>
+                                    <div class="ipo-company">BioGen Pharma</div>
+                                    <div class="ipo-sector">Healthcare</div>
+                                </div>
+                                <span class="ipo-status">Filed</span>
+                            </div>
+                            <div class="ipo-item-bottom">
+                                <span class="ipo-value">$680M</span>
+                                <span class="ipo-date">Feb 18</span>
+                            </div>
+                        </div>
+                        <div class="ipo-item">
+                            <div class="ipo-item-top">
+                                <div>
+                                    <div class="ipo-company">GreenEnergy Co</div>
+                                    <div class="ipo-sector">Energy</div>
+                                </div>
+                                <span class="ipo-status">Roadshow</span>
+                            </div>
+                            <div class="ipo-item-bottom">
+                                <span class="ipo-value">$320M</span>
+                                <span class="ipo-date">Feb 25</span>
+                            </div>
+                        </div>
+                        <div class="ipo-item">
+                            <div class="ipo-item-top">
+                                <div>
+                                    <div class="ipo-company">CloudNet Systems</div>
+                                    <div class="ipo-sector">Technology</div>
+                                </div>
+                                <span class="ipo-status">Filed</span>
+                            </div>
+                            <div class="ipo-item-bottom">
+                                <span class="ipo-value">$560M</span>
+                                <span class="ipo-date">Mar 3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- M&A Activity -->
+                <div class="res-card glass-card res-ma-card">
+                    <div class="res-card-header">
+                        <svg class="res-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                        <h3 class="res-card-title">M&A ACTIVITY TRENDS</h3>
+                        <span class="res-card-subtitle">Deal Value ($B) & Volume</span>
+                    </div>
+                    <div class="res-chart-wrapper">
+                        <canvas id="maChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AM & PE section -->
+            <section class="res-ampe-grid">
+                <!-- PE Deployment -->
+                <div class="res-card glass-card">
+                    <div class="res-card-header">
+                        <svg class="res-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                        <h3 class="res-card-title">PE DEPLOYMENT BY SECTOR</h3>
+                        <span class="res-card-subtitle">$B Invested</span>
+                    </div>
+                    <div class="res-chart-wrapper">
+                        <canvas id="peChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Hedge Fund Performance -->
+                <div class="res-card glass-card">
+                    <div class="res-card-header">
+                        <svg class="res-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                        <h3 class="res-card-title">HEDGE FUND PERFORMANCE</h3>
+                        <span class="res-card-subtitle">YTD Returns %</span>
+                    </div>
+                    <div class="res-chart-wrapper">
+                        <canvas id="hedgeChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fixed Income & Allocation -->
+            <section class="res-fi-grid">
+                <!-- Bond Issuance -->
+                <div class="res-card glass-card res-fi-card">
+                    <div class="res-card-header">
+                        <svg class="res-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                        <h3 class="res-card-title">FIXED INCOME ISSUANCE</h3>
+                        <span class="res-card-subtitle">Quarterly Volume ($B)</span>
+                    </div>
+                    <div class="res-chart-wrapper">
+                        <canvas id="bondChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Asset Allocation Pie -->
+                <div class="res-card glass-card">
+                    <div class="res-card-header">
+                        <svg class="res-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                        <h3 class="res-card-title">ASSET ALLOCATION</h3>
+                    </div>
+                    <div class="res-chart-wrapper">
+                        <canvas id="allocChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Real Estate & Credit -->
+            <section class="res-recc-grid">
+                <!-- Real Estate Transactions -->
+                <div class="res-card glass-card">
+                    <div class="res-card-header">
+                        <svg class="res-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                        <h3 class="res-card-title">REAL ESTATE TRANSACTIONS</h3>
+                        <span class="res-card-subtitle">Volume ($B) & Cap Rates %</span>
+                    </div>
+                    <div class="res-chart-wrapper">
+                        <canvas id="reChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Credit Spreads -->
+                <div class="res-card glass-card">
+                    <div class="res-card-header">
+                        <svg class="res-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 17"></polyline>
+                            <polyline points="17 6 23 6 23 12"></polyline>
+                        </svg>
+                        <h3 class="res-card-title">CREDIT SPREADS</h3>
+                        <span class="res-card-subtitle">Basis Points</span>
+                    </div>
+                    <div class="res-chart-wrapper">
+                        <canvas id="creditChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- professional resources section -->
+            <section class="res-pro-section">
+                <div class="res-pro-header">
+                    <h2 class="res-pro-title">Professional Resources</h2>
+                    <p class="res-pro-subtitle">Industry-leading platforms and publications for financial professionals</p>
+                </div>
+
+                <!-- News & Analysis -->
+                <div class="res-pro-category">
+                    <div class="res-pro-cat-header">
+                        <div class="res-pro-cat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path>
+                                <path d="M18 14h-8"></path><path d="M15 18h-5"></path>
+                                <path d="M10 6h8v4h-8V6Z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="res-pro-cat-title">News & Analysis</h3>
+                    </div>
+                    <div class="res-pro-items-grid">
+                        <a href="#" class="res-pro-item" target="_blank" rel="noopener noreferrer">
+                            <div class="res-pro-item-top">
+                                <h4 class="res-pro-item-title">Bloomberg Terminal</h4>
+                                <svg class="res-pro-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </div>
+                            <p class="res-pro-item-desc">Professional-grade financial data, news, and analytics platform</p>
+                            <div class="res-pro-item-footer">
+                                <span class="res-pro-related-label">Related:</span>
+                                <div class="res-pro-tags">
+                                    <span class="res-pro-tag">Investment Banking</span>
+                                    <span class="res-pro-tag">Capital Markets</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="res-pro-item" target="_blank" rel="noopener noreferrer">
+                            <div class="res-pro-item-top">
+                                <h4 class="res-pro-item-title">Financial Times</h4>
+                                <svg class="res-pro-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </div>
+                            <p class="res-pro-item-desc">Global business news, analysis, and market insights</p>
+                            <div class="res-pro-item-footer">
+                                <span class="res-pro-related-label">Related:</span>
+                                <div class="res-pro-tags">
+                                    <span class="res-pro-tag">Asset Management</span>
+                                    <span class="res-pro-tag">Capital Markets</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="res-pro-item" target="_blank" rel="noopener noreferrer">
+                            <div class="res-pro-item-top">
+                                <h4 class="res-pro-item-title">The Wall Street Journal</h4>
+                                <svg class="res-pro-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </div>
+                            <p class="res-pro-item-desc">Business journalism and financial markets coverage</p>
+                            <div class="res-pro-item-footer">
+                                <span class="res-pro-related-label">Related:</span>
+                                <div class="res-pro-tags">
+                                    <span class="res-pro-tag">Investment Banking</span>
+                                    <span class="res-pro-tag">Corporate Finance</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Educational Resources -->
+                <div class="res-pro-category">
+                    <div class="res-pro-cat-header">
+                        <div class="res-pro-cat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="res-pro-cat-title">Educational Resources</h3>
+                    </div>
+                    <div class="res-pro-items-grid">
+                        <a href="#" class="res-pro-item" target="_blank" rel="noopener noreferrer">
+                            <div class="res-pro-item-top">
+                                <h4 class="res-pro-item-title">CFA Institute</h4>
+                                <svg class="res-pro-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </div>
+                            <p class="res-pro-item-desc">Chartered Financial Analyst program and investment research</p>
+                            <div class="res-pro-item-footer">
+                                <span class="res-pro-related-label">Related:</span>
+                                <div class="res-pro-tags">
+                                    <span class="res-pro-tag">Asset Management</span>
+                                    <span class="res-pro-tag">Investment Banking</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="res-pro-item" target="_blank" rel="noopener noreferrer">
+                            <div class="res-pro-item-top">
+                                <h4 class="res-pro-item-title">FINRA Investor Education</h4>
+                                <svg class="res-pro-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </div>
+                            <p class="res-pro-item-desc">Securities industry regulation and investor protection</p>
+                            <div class="res-pro-item-footer">
+                                <span class="res-pro-related-label">Related:</span>
+                                <div class="res-pro-tags">
+                                    <span class="res-pro-tag">Capital Markets</span>
+                                    <span class="res-pro-tag">Insurance</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="res-pro-item" target="_blank" rel="noopener noreferrer">
+                            <div class="res-pro-item-top">
+                                <h4 class="res-pro-item-title">SEC EDGAR Database</h4>
+                                <svg class="res-pro-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </div>
+                            <p class="res-pro-item-desc">Public company filings, 10-Ks, prospectuses, and disclosures</p>
+                            <div class="res-pro-item-footer">
+                                <span class="res-pro-related-label">Related:</span>
+                                <div class="res-pro-tags">
+                                    <span class="res-pro-tag">Investment Banking</span>
+                                    <span class="res-pro-tag">Corporate Finance</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Industry Publications -->
+                <div class="res-pro-category">
+                    <div class="res-pro-cat-header">
+                        <div class="res-pro-cat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                        </div>
+                        <h3 class="res-pro-cat-title">Industry Publications</h3>
+                    </div>
+                    <div class="res-pro-items-grid">
+                        <a href="#" class="res-pro-item" target="_blank" rel="noopener noreferrer">
+                            <div class="res-pro-item-top">
+                                <h4 class="res-pro-item-title">M&A Journal</h4>
+                                <svg class="res-pro-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </div>
+                            <p class="res-pro-item-desc">Mergers, acquisitions, and corporate transactions analysis</p>
+                            <div class="res-pro-item-footer">
+                                <span class="res-pro-related-label">Related:</span>
+                                <div class="res-pro-tags">
+                                    <span class="res-pro-tag">Investment Banking</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="res-pro-item" target="_blank" rel="noopener noreferrer">
+                            <div class="res-pro-item-top">
+                                <h4 class="res-pro-item-title">Commercial Real Estate Direct</h4>
+                                <svg class="res-pro-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </div>
+                            <p class="res-pro-item-desc">CRE financing, CMBS market intelligence and data</p>
+                            <div class="res-pro-item-footer">
+                                <span class="res-pro-related-label">Related:</span>
+                                <div class="res-pro-tags">
+                                    <span class="res-pro-tag">Real Estate Finance</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="res-pro-item" target="_blank" rel="noopener noreferrer">
+                            <div class="res-pro-item-top">
+                                <h4 class="res-pro-item-title">Institutional Investor</h4>
+                                <svg class="res-pro-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </div>
+                            <p class="res-pro-item-desc">Asset management, hedge funds, and institutional strategies</p>
+                            <div class="res-pro-item-footer">
+                                <span class="res-pro-related-label">Related:</span>
+                                <div class="res-pro-tags">
+                                    <span class="res-pro-tag">Asset Management</span>
+                                    <span class="res-pro-tag">Capital Markets</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Market Data Platforms -->
+                <div class="res-pro-category">
+                    <div class="res-pro-cat-header">
+                        <div class="res-pro-cat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </div>
+                        <h3 class="res-pro-cat-title">Market Data Platforms</h3>
+                    </div>
+                    <div class="res-pro-items-grid">
+                        <a href="#" class="res-pro-item" target="_blank" rel="noopener noreferrer">
+                            <div class="res-pro-item-top">
+                                <h4 class="res-pro-item-title">FactSet</h4>
+                                <svg class="res-pro-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </div>
+                            <p class="res-pro-item-desc">Integrated financial data and analytics workstation</p>
+                            <div class="res-pro-item-footer">
+                                <span class="res-pro-related-label">Related:</span>
+                                <div class="res-pro-tags">
+                                    <span class="res-pro-tag">Investment Banking</span>
+                                    <span class="res-pro-tag">Asset Management</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="res-pro-item" target="_blank" rel="noopener noreferrer">
+                            <div class="res-pro-item-top">
+                                <h4 class="res-pro-item-title">Capital IQ</h4>
+                                <svg class="res-pro-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </div>
+                            <p class="res-pro-item-desc">Market intelligence and comprehensive financial database</p>
+                            <div class="res-pro-item-footer">
+                                <span class="res-pro-related-label">Related:</span>
+                                <div class="res-pro-tags">
+                                    <span class="res-pro-tag">Investment Banking</span>
+                                    <span class="res-pro-tag">Corporate Finance</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="res-pro-item" target="_blank" rel="noopener noreferrer">
+                            <div class="res-pro-item-top">
+                                <h4 class="res-pro-item-title">PitchBook</h4>
+                                <svg class="res-pro-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </div>
+                            <p class="res-pro-item-desc">Private equity, venture capital, and M&A data</p>
+                            <div class="res-pro-item-footer">
+                                <span class="res-pro-related-label">Related:</span>
+                                <div class="res-pro-tags">
+                                    <span class="res-pro-tag">Asset Management</span>
+                                    <span class="res-pro-tag">Investment Banking</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- connect learning CTA -->
+            <section class="res-connect-card glass-card">
+                <div class="grid-pattern"></div>
+                <div class="res-connect-inner">
+                    <div class="res-connect-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                    </div>
+                    <div class="res-connect-text">
+                        <h3 class="res-connect-title">Connect Learning to Practice</h3>
+                        <p class="res-connect-desc">These institutional analytics and professional resources complement your FinLit training. Apply concepts from your modules by exploring real market data, deal activity, and industry analysis.</p>
+                        <a href="learning.html" class="res-connect-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            </svg>
+                            Continue Your Learning Journey
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- disclaimer -->
+            <div class="res-disclaimer">
+                <svg class="res-disclaimer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+                <div>
+                    <h3 class="res-disclaimer-title">Demo Analytics & Data</h3>
+                    <p class="res-disclaimer-text">All market analytics, deal data, and visualizations are for demonstration and educational purposes. Production systems integrate with institutional platforms like Bloomberg Terminal, Refinitiv, FactSet, PitchBook, and other professional data providers.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../../../assets/finlit-logo.png" alt="FinLit Logo" class="footer-logo-img">
+                        <h3 class="footer-title">FinLit</h3>
+                    </div>
+                    <p class="footer-description">Financial Literacy Platform</p>
+                    <p class="footer-subdesc">Empowering professionals with institutional-grade learning tools, market data, and career resources.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="X">
+                            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Platform</h4>
+                        <ul>
+                            <li><a href="#">Learning Paths</a></li>
+                            <li><a href="#">Resources</a></li>
+                            <li><a href="#">Market Data</a></li>
+                            <li><a href="#">Case Studies</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Tools</h4>
+                        <ul>
+                            <li><a href="#">Financial Calculators</a></li>
+                            <li><a href="#">Model Templates</a></li>
+                            <li><a href="#">Deal Analysis</a></li>
+                            <li><a href="#">Glossary</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Partners</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 FinLit. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/resources.js"></script>
+</body>
+</html>
