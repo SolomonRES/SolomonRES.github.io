@@ -11,7 +11,7 @@ const sadSongs = {
   "Someone Like You by Adele": "hLQl3WQQoQ0",
   "Drivers License by Olivia Rodrigo": "ZmDBbnmKpqQ",
   "Fix You by Coldplay": "k4V3Mo61fJM",
-  "Whiskey Lullaby by Brad Paisley & Alison Krauss": "IZbN_mNre1U",
+  "Something in the Orange by Zach Bryan": "lA8hKZYH_P4",
   "The Night We Met by Lord Huron": "KtlgYxa6BMU"
 };
 
