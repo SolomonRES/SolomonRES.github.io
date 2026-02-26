@@ -237,6 +237,23 @@ body#page {
   font-weight: 400;
 }
 
+.card-repo-link {
+  display: block;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--garnet);
+  text-decoration: none;
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.card-repo-link:hover {
+  background: var(--garnet);
+  color: #ffffff;
+}
+
 /* overlay */
 .card-overlay {
   position: absolute;
