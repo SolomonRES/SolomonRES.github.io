@@ -1,0 +1,240 @@
+/* ── Variables ───────────────────────────────────────────── */
+:root {
+  --garnet: #73000a;
+  --garnet-dark: #4f0007;
+  --text: #1b1b1b;
+  --grey: #5a5a5a;
+  --lightgray: #eeeeef;
+  --card: rgba(255, 255, 255, 0.85);
+  --border: #d9d9d6;
+}
+
+/* ── Reset & Base ───────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--lightgray);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Wrapper / Card Container ───────────────────────────── */
+.wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 960px;
+  padding: 2rem 2.5rem 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Card Header ────────────────────────────────────────── */
+.card-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.card-heading {
+  font-size: 1.85rem;
+  color: var(--garnet);
+  letter-spacing: 0.5px;
+}
+
+.heading-rule {
+  width: 60px;
+  height: 3px;
+  background: var(--garnet);
+  margin: 0.5rem auto;
+  border-radius: 2px;
+}
+
+.card-subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--grey);
+}
+
+/* ── Song Gallery ───────────────────────────────────────── */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ── Song Card ──────────────────────────────────────────── */
+.song-card {
+  background: #333333;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.song-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.song-card-header {
+  padding: 0.75rem 0.75rem 0.5rem;
+  text-align: center;
+  color: #fff;
+}
+
+.song-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.song-artist {
+  font-size: 0.75rem;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+.song-cover {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Modal Overlay ──────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  transition: opacity 0.25s ease;
+}
+
+.modal-overlay.hidden {
+  display: none;
+}
+
+/* ── Modal Box ──────────────────────────────────────────── */
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  animation: fadeUp 0.25s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--grey);
+  cursor: pointer;
+  z-index: 10;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.modal-close:hover {
+  color: var(--garnet);
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.modal-video {
+  flex: 1.2;
+  background: #000;
+  display: flex;
+  align-items: center;
+}
+
+.modal-video iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  border: none;
+}
+
+.modal-info {
+  flex: 1;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modal-info h3 {
+  font-size: 1.25rem;
+  color: var(--garnet);
+  margin-bottom: 0.25rem;
+}
+
+.modal-info p {
+  font-size: 0.95rem;
+  color: var(--grey);
+  line-height: 1.4;
+}
+
+/* ── Footer ─────────────────────────────────────────────── */
+.page-footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: var(--grey);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .modal-body {
+    flex-direction: column;
+  }
+
+  .modal-video iframe {
+    min-height: 200px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
