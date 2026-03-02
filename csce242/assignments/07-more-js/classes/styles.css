@@ -1,4 +1,3 @@
-/* ── Variables ───────────────────────────────────────────── */
 :root {
   --garnet: #73000a;
   --garnet-dark: #4f0007;
@@ -9,7 +8,7 @@
   --border: #d9d9d6;
 }
 
-/* ── Reset & Base ───────────────────────────────────────── */
+/* reset & base */
 *,
 *::before,
 *::after {
@@ -27,7 +26,7 @@ body {
   flex-direction: column;
 }
 
-/* ── Wrapper / Card Container ───────────────────────────── */
+/* wrapper / card container */
 .wrapper {
   flex: 1;
   display: flex;
@@ -45,7 +44,7 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
-/* ── Card Header ────────────────────────────────────────── */
+/* card header */
 .card-header {
   text-align: center;
   margin-bottom: 1.75rem;
@@ -71,14 +70,14 @@ body {
   color: var(--grey);
 }
 
-/* ── Song Gallery ───────────────────────────────────────── */
+/* song gallery */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 1.25rem;
 }
 
-/* ── Song Card ──────────────────────────────────────────── */
+/* song card */
 .song-card {
   background: #333333;
   border-radius: 10px;
@@ -119,7 +118,7 @@ body {
   display: block;
 }
 
-/* ── Modal Overlay ──────────────────────────────────────── */
+/* modal overlay */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -136,7 +135,7 @@ body {
   display: none;
 }
 
-/* ── Modal Box ──────────────────────────────────────────── */
+/* modal box */
 .modal {
   background: #fff;
   border-radius: 12px;
@@ -216,7 +215,7 @@ body {
   line-height: 1.4;
 }
 
-/* ── Footer ─────────────────────────────────────────────── */
+/* footer */
 .page-footer {
   text-align: center;
   padding: 1rem;
@@ -224,7 +223,7 @@ body {
   color: var(--grey);
 }
 
-/* ── Responsive ─────────────────────────────────────────── */
+/* responsive */
 @media (max-width: 600px) {
   .modal-body {
     flex-direction: column;
