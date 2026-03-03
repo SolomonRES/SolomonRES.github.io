@@ -1,0 +1,30 @@
+:root {
+  --garnet: #73000a;
+  --garnet-dark: #4f0007;
+  --grey: #5a5a5a;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.hello {
+  font-size: 4rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--garnet), var(--garnet-dark), var(--grey), var(--garnet));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientText 4s ease infinite;
+}
+
+@keyframes gradientText {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
