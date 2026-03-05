@@ -283,9 +283,40 @@ body#page {
   font-weight: 700;
 }
 
-/* project layout: keep 3 cards horizontal on desktop */
+/* project links grid (React + Render) */
+.project-links-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--garnet);
+  text-decoration: none;
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.project-link:nth-child(odd) {
+  border-right: 1px solid #e0e0e0;
+}
+
+.project-link:hover {
+  background: var(--garnet);
+  color: #ffffff;
+}
+
+/* project layout: keep cards horizontal on desktop */
 .project-row {
   flex-wrap: nowrap;
+  align-items: stretch;
 }
 
 .project-card-main {
@@ -294,18 +325,29 @@ body#page {
 }
 
 .project-card-side {
-  flex: 0 0 280px;
+  flex: 1 1 280px;
   min-width: 260px;
+  display: flex;
+  flex-direction: column;
 }
 
-/* make FinLit preview feel smaller inside its container */
-.project-card-main .card-media-wide {
-  aspect-ratio: 16 / 10;
+.project-card-side .card-hit {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
 
-.project-card-main .card-img {
-  object-fit: contain;
-  padding: 10px;
+.project-card-side .card-media-wide {
+  flex: 1 1 auto;
+  aspect-ratio: auto;
+}
+
+.project-card-side .card-body {
+  flex: 0 0 auto;
+}
+
+.project-card-side .card-img {
+  object-fit: cover;
   background: #ffffff;
 }
 
