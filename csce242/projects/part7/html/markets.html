@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinLit - Markets</title>
+    <link rel="icon" type="image/png" href="../../../assets/favicon.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- navigation -->
+    <nav class="nav-wrapper">
+        <div class="nav-container">
+            <div class="nav-content">
+                <a href="home.html" class="logo">
+                    <img src="../../../assets/finlit-logo.png" alt="FinLit Logo" class="logo-img-icon">
+                    <span class="logo-text">FinLit</span>
+                </a>
+                <div class="search-container">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" class="search-input" placeholder="Search modules, topics, resources...">
+                </div>
+                <div class="nav-links">
+                    <a href="learning.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                        Learning
+                    </a>
+                    <a href="tools.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                        Tools
+                    </a>
+                    <a href="markets.html" class="nav-link active">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                            <polyline points="16 7 22 7 22 13"></polyline>
+                        </svg>
+                        Markets
+                    </a>
+                    <a href="resources.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                        Resources
+                    </a>
+                </div>
+                <a href="profile.html" class="profile-link">
+                    <svg class="profile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </a>
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- mobile side panel overlay -->
+    <div class="side-panel-overlay" id="sidePanelOverlay"></div>
+    <aside class="side-panel" id="sidePanel">
+        <div class="side-panel-decoration"></div>
+        <div class="side-panel-header">
+            <a href="home.html" class="logo">
+                <img src="../../../assets/finlit-logo.png" alt="FinLit Logo" class="logo-img-icon">
+                <span class="logo-text">FinLit</span>
+            </a>
+            <button class="side-panel-close" id="sidePanelClose" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="side-panel-nav">
+            <a href="learning.html" class="side-panel-link" style="--delay: 0">
+                <div class="side-panel-icon-wrapper">
+                    <svg class="side-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                    </svg>
+                </div>
+                <div class="side-panel-link-text">
+                    <span class="side-panel-link-title">Learning</span>
+                    <span class="side-panel-link-desc">Courses & modules</span>
+                </div>
+                <svg class="side-panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <a href="tools.html" class="side-panel-link" style="--delay: 1">
+                <div class="side-panel-icon-wrapper">
+                    <svg class="side-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                    </svg>
+                </div>
+                <div class="side-panel-link-text">
+                    <span class="side-panel-link-title">Tools</span>
+                    <span class="side-panel-link-desc">Calculators & models</span>
+                </div>
+                <svg class="side-panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <a href="markets.html" class="side-panel-link" style="--delay: 2">
+                <div class="side-panel-icon-wrapper">
+                    <svg class="side-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                        <polyline points="16 7 22 7 22 13"></polyline>
+                    </svg>
+                </div>
+                <div class="side-panel-link-text">
+                    <span class="side-panel-link-title">Markets</span>
+                    <span class="side-panel-link-desc">Live data & analysis</span>
+                </div>
+                <svg class="side-panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <a href="resources.html" class="side-panel-link" style="--delay: 3">
+                <div class="side-panel-icon-wrapper">
+                    <svg class="side-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                </div>
+                <div class="side-panel-link-text">
+                    <span class="side-panel-link-title">Resources</span>
+                    <span class="side-panel-link-desc">Guides & references</span>
+                </div>
+                <svg class="side-panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <div class="side-panel-divider"></div>
+            <a href="profile.html" class="side-panel-link" style="--delay: 4">
+                <div class="side-panel-icon-wrapper">
+                    <svg class="side-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <div class="side-panel-link-text">
+                    <span class="side-panel-link-title">Profile</span>
+                    <span class="side-panel-link-desc">Account & settings</span>
+                </div>
+                <svg class="side-panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+        </nav>
+        <div class="side-panel-footer">
+            <p>&copy; 2026 FinLit</p>
+        </div>
+    </aside>
+
+    <!-- markets header -->
+    <section class="markets-header">
+        <div class="grid-pattern"></div>
+        <div class="markets-header-content">
+            <div class="markets-header-row">
+                <div>
+                    <div class="markets-live-badge">
+                        <span class="markets-live-dot"></span>
+                        Live Market Data
+                    </div>
+                    <h1 class="markets-title">Global Markets</h1>
+                    <p class="markets-subtitle">Real-time market intelligence across major exchanges</p>
+                </div>
+                <div class="markets-updated">
+                    <!-- clock icon -->
+                    <svg class="markets-clock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span>Updated: <span id="marketTime"></span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- markets content -->
+    <div class="markets-content">
+        <div class="markets-container">
+
+            <!-- Live Market Chart (TradingView iframe) -->
+            <section class="tradingview-section">
+                <div class="tradingview-header">
+                    <div class="tradingview-header-left">
+                        <svg class="markets-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                            <polyline points="16 7 22 7 22 13"></polyline>
+                        </svg>
+                        <h3>Live Market Chart</h3>
+                    </div>
+                    <p class="tradingview-desc">Real-time S&P 500 chart powered by TradingView. Interact with indicators, time-frames, and drawing tools.</p>
+                </div>
+                <div class="tradingview-wrapper glass-card">
+                    <iframe
+                        src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_widget&symbol=AMEX%3ASPY&interval=D&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=%5B%5D&theme=dark&style=1&timezone=America%2FNew_York&withdateranges=1&showpopupbutton=1&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&showpopupbutton=1&locale=en&utm_source=localhost&utm_medium=widget_new&utm_campaign=chart"
+                        title="TradingView S&P 500 Chart"
+                        class="tradingview-iframe"
+                        allowtransparency="true"
+                        frameborder="0"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+
+            <!-- major indices -->
+            <section class="markets-section">
+                <div class="markets-section-header">
+                    <!-- activity icon -->
+                    <svg class="markets-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                    <h2 class="markets-section-title">Major Indices</h2>
+                </div>
+
+                <div class="indices-grid">
+                    <!-- S&P 500 -->
+                    <div class="index-card glass-card">
+                        <div class="index-card-top">
+                            <div>
+                                <div class="index-symbol">SPX</div>
+                                <div class="index-name">S&P 500</div>
+                            </div>
+                            <span class="index-region region-us">US</span>
+                        </div>
+                        <div class="index-value">4,760.12</div>
+                        <div class="index-change positive">
+                            <svg class="change-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                            <span>+34.35 (+0.73%)</span>
+                        </div>
+                    </div>
+
+                    <!-- Dow Jones -->
+                    <div class="index-card glass-card">
+                        <div class="index-card-top">
+                            <div>
+                                <div class="index-symbol">DJI</div>
+                                <div class="index-name">Dow Jones</div>
+                            </div>
+                            <span class="index-region region-us">US</span>
+                        </div>
+                        <div class="index-value">37,529.84</div>
+                        <div class="index-change positive">
+                            <svg class="change-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                            <span>+218.96 (+0.59%)</span>
+                        </div>
+                    </div>
+
+                    <!-- NASDAQ -->
+                    <div class="index-card glass-card">
+                        <div class="index-card-top">
+                            <div>
+                                <div class="index-symbol">IXIC</div>
+                                <div class="index-name">NASDAQ</div>
+                            </div>
+                            <span class="index-region region-us">US</span>
+                        </div>
+                        <div class="index-value">14,864.85</div>
+                        <div class="index-change positive">
+                            <svg class="change-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                            <span>+123.74 (+0.84%)</span>
+                        </div>
+                    </div>
+
+                    <!-- FTSE 100 -->
+                    <div class="index-card glass-card">
+                        <div class="index-card-top">
+                            <div>
+                                <div class="index-symbol">UKX</div>
+                                <div class="index-name">FTSE 100</div>
+                            </div>
+                            <span class="index-region region-eu">EU</span>
+                        </div>
+                        <div class="index-value">7,632.45</div>
+                        <div class="index-change negative">
+                            <svg class="change-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="7" x2="17" y2="17"></line>
+                                <polyline points="17 7 17 17 7 17"></polyline>
+                            </svg>
+                            <span>-22.14 (-0.29%)</span>
+                        </div>
+                    </div>
+
+                    <!-- DAX -->
+                    <div class="index-card glass-card">
+                        <div class="index-card-top">
+                            <div>
+                                <div class="index-symbol">DAX</div>
+                                <div class="index-name">DAX</div>
+                            </div>
+                            <span class="index-region region-eu">EU</span>
+                        </div>
+                        <div class="index-value">16,758.23</div>
+                        <div class="index-change positive">
+                            <svg class="change-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                            <span>+45.67 (+0.27%)</span>
+                        </div>
+                    </div>
+
+                    <!-- Hang Seng -->
+                    <div class="index-card glass-card">
+                        <div class="index-card-top">
+                            <div>
+                                <div class="index-symbol">HSI</div>
+                                <div class="index-name">Hang Seng</div>
+                            </div>
+                            <span class="index-region region-apac">APAC</span>
+                        </div>
+                        <div class="index-value">16,334.91</div>
+                        <div class="index-change negative">
+                            <svg class="change-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="7" x2="17" y2="17"></line>
+                                <polyline points="17 7 17 17 7 17"></polyline>
+                            </svg>
+                            <span>-134.22 (-0.81%)</span>
+                        </div>
+                    </div>
+
+                    <!-- Nikkei 225 -->
+                    <div class="index-card glass-card">
+                        <div class="index-card-top">
+                            <div>
+                                <div class="index-symbol">NKY</div>
+                                <div class="index-name">Nikkei 225</div>
+                            </div>
+                            <span class="index-region region-apac">APAC</span>
+                        </div>
+                        <div class="index-value">35,489.57</div>
+                        <div class="index-change positive">
+                            <svg class="change-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                            <span>+289.12 (+0.82%)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- charts section -->
+            <section class="markets-section">
+                <div class="charts-grid">
+                    <!-- S&P 500 area chart -->
+                    <div class="chart-card glass-card">
+                        <div class="chart-header">
+                            <div>
+                                <div class="chart-symbol">SPX</div>
+                                <h3 class="chart-title">S&P 500 Intraday</h3>
+                            </div>
+                            <div class="chart-badge positive">
+                                <svg class="chart-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 17"></polyline>
+                                    <polyline points="17 6 23 6 23 12"></polyline>
+                                </svg>
+                                +0.73%
+                            </div>
+                        </div>
+                        <div class="chart-area-wrapper">
+                            <canvas id="spxChart" width="500" height="250"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Volume bar chart -->
+                    <div class="chart-card glass-card">
+                        <div class="chart-header">
+                            <div>
+                                <div class="chart-symbol">VOLUME</div>
+                                <h3 class="chart-title">Trading Volume</h3>
+                            </div>
+                            <!-- database icon -->
+                            <svg class="chart-header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                            </svg>
+                        </div>
+                        <div class="chart-area-wrapper">
+                            <canvas id="volumeChart" width="500" height="250"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- currencies & commodities -->
+            <section class="markets-section">
+                <div class="markets-bottom-grid">
+                    <!-- currencies -->
+                    <div>
+                        <div class="markets-section-header">
+                            <!-- dollar-sign icon -->
+                            <svg class="markets-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                            <h2 class="markets-section-title">Currencies</h2>
+                        </div>
+                        <div class="data-table glass-card">
+                            <div class="data-row">
+                                <div class="data-pair">EUR/USD</div>
+                                <div class="data-values">
+                                    <span class="data-rate">1.0847</span>
+                                    <span class="data-change positive">+0.0012</span>
+                                </div>
+                            </div>
+                            <div class="data-row">
+                                <div class="data-pair">GBP/USD</div>
+                                <div class="data-values">
+                                    <span class="data-rate">1.2634</span>
+                                    <span class="data-change negative">-0.0023</span>
+                                </div>
+                            </div>
+                            <div class="data-row">
+                                <div class="data-pair">USD/JPY</div>
+                                <div class="data-values">
+                                    <span class="data-rate">148.73</span>
+                                    <span class="data-change positive">+0.45</span>
+                                </div>
+                            </div>
+                            <div class="data-row last">
+                                <div class="data-pair">USD/CNY</div>
+                                <div class="data-values">
+                                    <span class="data-rate">7.2456</span>
+                                    <span class="data-change negative">-0.0089</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- commodities -->
+                    <div>
+                        <div class="markets-section-header">
+                            <!-- globe icon -->
+                            <svg class="markets-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            <h2 class="markets-section-title">Commodities</h2>
+                        </div>
+                        <div class="data-table glass-card">
+                            <div class="data-row">
+                                <div>
+                                    <div class="data-pair">WTI Crude</div>
+                                    <div class="data-unit">$/bbl</div>
+                                </div>
+                                <div class="data-values">
+                                    <span class="data-rate">78.45</span>
+                                    <span class="data-change positive">+1.23</span>
+                                </div>
+                            </div>
+                            <div class="data-row">
+                                <div>
+                                    <div class="data-pair">Gold</div>
+                                    <div class="data-unit">$/oz</div>
+                                </div>
+                                <div class="data-values">
+                                    <span class="data-rate">2,034.50</span>
+                                    <span class="data-change negative">-8.70</span>
+                                </div>
+                            </div>
+                            <div class="data-row">
+                                <div>
+                                    <div class="data-pair">Silver</div>
+                                    <div class="data-unit">$/oz</div>
+                                </div>
+                                <div class="data-values">
+                                    <span class="data-rate">23.12</span>
+                                    <span class="data-change positive">+0.34</span>
+                                </div>
+                            </div>
+                            <div class="data-row last">
+                                <div>
+                                    <div class="data-pair">Natural Gas</div>
+                                    <div class="data-unit">$/MMBtu</div>
+                                </div>
+                                <div class="data-values">
+                                    <span class="data-rate">2.67</span>
+                                    <span class="data-change positive">+0.09</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../../../assets/finlit-logo.png" alt="FinLit Logo" class="footer-logo-img">
+                        <h3 class="footer-title">FinLit</h3>
+                    </div>
+                    <p class="footer-description">Financial Literacy Platform</p>
+                    <p class="footer-subdesc">Empowering professionals with institutional-grade learning tools, market data, and career resources.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="X">
+                            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Platform</h4>
+                        <ul>
+                            <li><a href="#">Learning Paths</a></li>
+                            <li><a href="#">Resources</a></li>
+                            <li><a href="#">Market Data</a></li>
+                            <li><a href="#">Case Studies</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Tools</h4>
+                        <ul>
+                            <li><a href="#">Financial Calculators</a></li>
+                            <li><a href="#">Model Templates</a></li>
+                            <li><a href="#">Deal Analysis</a></li>
+                            <li><a href="#">Glossary</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Partners</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 FinLit. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/markets.js"></script>
+</body>
+</html>

@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinLit - Profile</title>
+    <link rel="icon" type="image/png" href="../../../assets/favicon.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- navigation -->
+    <nav class="nav-wrapper">
+        <div class="nav-container">
+            <div class="nav-content">
+                <a href="home.html" class="logo">
+                    <img src="../../../assets/finlit-logo.png" alt="FinLit Logo" class="logo-img-icon">
+                    <span class="logo-text">FinLit</span>
+                </a>
+                <div class="search-container">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" class="search-input" placeholder="Search modules, topics, resources...">
+                </div>
+                <div class="nav-links">
+                    <a href="learning.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                        Learning
+                    </a>
+                    <a href="tools.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                        Tools
+                    </a>
+                    <a href="markets.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                            <polyline points="16 7 22 7 22 13"></polyline>
+                        </svg>
+                        Markets
+                    </a>
+                    <a href="resources.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                        Resources
+                    </a>
+                </div>
+                <a href="profile.html" class="profile-link active">
+                    <svg class="profile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </a>
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- mobile side panel overlay -->
+    <div class="side-panel-overlay" id="sidePanelOverlay"></div>
+    <aside class="side-panel" id="sidePanel">
+        <div class="side-panel-decoration"></div>
+        <div class="side-panel-header">
+            <a href="home.html" class="logo">
+                <img src="../../../assets/finlit-logo.png" alt="FinLit Logo" class="logo-img-icon">
+                <span class="logo-text">FinLit</span>
+            </a>
+            <button class="side-panel-close" id="sidePanelClose" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="side-panel-nav">
+            <a href="learning.html" class="side-panel-link" style="--delay: 0">
+                <div class="side-panel-icon-wrapper">
+                    <svg class="side-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                    </svg>
+                </div>
+                <div class="side-panel-link-text">
+                    <span class="side-panel-link-title">Learning</span>
+                    <span class="side-panel-link-desc">Courses & modules</span>
+                </div>
+                <svg class="side-panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <a href="tools.html" class="side-panel-link" style="--delay: 1">
+                <div class="side-panel-icon-wrapper">
+                    <svg class="side-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                    </svg>
+                </div>
+                <div class="side-panel-link-text">
+                    <span class="side-panel-link-title">Tools</span>
+                    <span class="side-panel-link-desc">Calculators & models</span>
+                </div>
+                <svg class="side-panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <a href="markets.html" class="side-panel-link" style="--delay: 2">
+                <div class="side-panel-icon-wrapper">
+                    <svg class="side-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                        <polyline points="16 7 22 7 22 13"></polyline>
+                    </svg>
+                </div>
+                <div class="side-panel-link-text">
+                    <span class="side-panel-link-title">Markets</span>
+                    <span class="side-panel-link-desc">Live data & analysis</span>
+                </div>
+                <svg class="side-panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <a href="resources.html" class="side-panel-link" style="--delay: 3">
+                <div class="side-panel-icon-wrapper">
+                    <svg class="side-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                </div>
+                <div class="side-panel-link-text">
+                    <span class="side-panel-link-title">Resources</span>
+                    <span class="side-panel-link-desc">Guides & references</span>
+                </div>
+                <svg class="side-panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <div class="side-panel-divider"></div>
+            <a href="profile.html" class="side-panel-link" style="--delay: 4">
+                <div class="side-panel-icon-wrapper">
+                    <svg class="side-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <div class="side-panel-link-text">
+                    <span class="side-panel-link-title">Profile</span>
+                    <span class="side-panel-link-desc">Account & settings</span>
+                </div>
+                <svg class="side-panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+        </nav>
+        <div class="side-panel-footer">
+            <p>&copy; 2026 FinLit</p>
+        </div>
+    </aside>
+
+    <!-- profile header -->
+    <section class="prof-header">
+        <div class="grid-pattern"></div>
+        <div class="prof-header-content">
+            <h1 class="prof-name">Solomon Ellis-Summers</h1>
+            <div class="prof-meta">
+                <span class="prof-meta-item">Analyst Track</span>
+                <span class="prof-meta-item">
+                    <svg class="prof-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    Member since January 2026
+                </span>
+                <span class="prof-streak-badge">
+                    <svg class="prof-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    <span class="prof-streak-text">21 day streak</span>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- main content -->
+    <div class="prof-content">
+        <div class="prof-container">
+            <div class="prof-layout">
+                <!-- left column (main) -->
+                <div class="prof-main">
+                    <!-- overall progress -->
+                    <div class="prof-card glass-card">
+                        <div class="prof-card-header">
+                            <div class="prof-card-icon-box">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 17"></polyline>
+                                    <polyline points="17 6 23 6 23 12"></polyline>
+                                </svg>
+                            </div>
+                            <h2 class="prof-card-title">Overall Progress</h2>
+                        </div>
+
+                        <div class="prof-stats-grid">
+                            <div class="prof-stat-box">
+                                <div class="prof-stat-value">42%</div>
+                                <div class="prof-stat-label">Total Completion</div>
+                            </div>
+                            <div class="prof-stat-box">
+                                <div class="prof-stat-value">18</div>
+                                <div class="prof-stat-label">Modules Completed</div>
+                            </div>
+                            <div class="prof-stat-box">
+                                <div class="prof-stat-value">21</div>
+                                <div class="prof-stat-label">Day Streak</div>
+                            </div>
+                        </div>
+
+                        <div class="prof-progress-section">
+                            <div class="prof-progress-info">
+                                <span>Overall Progress</span>
+                                <span class="prof-progress-count">18/43 modules</span>
+                            </div>
+                            <div class="prof-progress-track">
+                                <div class="prof-progress-bar" style="width: 42%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- sector progress -->
+                    <div class="prof-card glass-card">
+                        <div class="prof-card-header">
+                            <div class="prof-card-icon-box">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <circle cx="12" cy="12" r="6"></circle>
+                                    <circle cx="12" cy="12" r="2"></circle>
+                                </svg>
+                            </div>
+                            <h2 class="prof-card-title">Sector Progress</h2>
+                        </div>
+
+                        <div class="prof-sector-list">
+                            <!-- Investment Banking -->
+                            <div class="prof-sector-item">
+                                <div class="prof-sector-top">
+                                    <div class="prof-sector-info">
+                                        <svg class="prof-sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                        </svg>
+                                        <div>
+                                            <div class="prof-sector-name">Investment Banking</div>
+                                            <div class="prof-sector-count">13 of 20 modules</div>
+                                        </div>
+                                    </div>
+                                    <div class="prof-sector-pct">65%</div>
+                                </div>
+                                <div class="prof-progress-track">
+                                    <div class="prof-progress-bar" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <!-- Capital Markets -->
+                            <div class="prof-sector-item">
+                                <div class="prof-sector-top">
+                                    <div class="prof-sector-info">
+                                        <svg class="prof-sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                        </svg>
+                                        <div>
+                                            <div class="prof-sector-name">Capital Markets</div>
+                                            <div class="prof-sector-count">6 of 15 modules</div>
+                                        </div>
+                                    </div>
+                                    <div class="prof-sector-pct">40%</div>
+                                </div>
+                                <div class="prof-progress-track">
+                                    <div class="prof-progress-bar" style="width: 40%"></div>
+                                </div>
+                            </div>
+                            <!-- Asset Management -->
+                            <div class="prof-sector-item">
+                                <div class="prof-sector-top">
+                                    <div class="prof-sector-info">
+                                        <svg class="prof-sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <circle cx="12" cy="12" r="6"></circle>
+                                            <circle cx="12" cy="12" r="2"></circle>
+                                        </svg>
+                                        <div>
+                                            <div class="prof-sector-name">Asset Management</div>
+                                            <div class="prof-sector-count">2 of 10 modules</div>
+                                        </div>
+                                    </div>
+                                    <div class="prof-sector-pct">20%</div>
+                                </div>
+                                <div class="prof-progress-track">
+                                    <div class="prof-progress-bar" style="width: 20%"></div>
+                                </div>
+                            </div>
+                            <!-- Corporate Finance -->
+                            <div class="prof-sector-item">
+                                <div class="prof-sector-top">
+                                    <div class="prof-sector-info">
+                                        <svg class="prof-sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                                        </svg>
+                                        <div>
+                                            <div class="prof-sector-name">Corporate Finance</div>
+                                            <div class="prof-sector-count">3 of 10 modules</div>
+                                        </div>
+                                    </div>
+                                    <div class="prof-sector-pct">30%</div>
+                                </div>
+                                <div class="prof-progress-track">
+                                    <div class="prof-progress-bar" style="width: 30%"></div>
+                                </div>
+                            </div>
+                            <!-- Real Estate -->
+                            <div class="prof-sector-item">
+                                <div class="prof-sector-top">
+                                    <div class="prof-sector-info">
+                                        <svg class="prof-sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                        </svg>
+                                        <div>
+                                            <div class="prof-sector-name">Real Estate</div>
+                                            <div class="prof-sector-count">1 of 8 modules</div>
+                                        </div>
+                                    </div>
+                                    <div class="prof-sector-pct">10%</div>
+                                </div>
+                                <div class="prof-progress-track">
+                                    <div class="prof-progress-bar" style="width: 10%"></div>
+                                </div>
+                            </div>
+                            <!-- Insurance -->
+                            <div class="prof-sector-item">
+                                <div class="prof-sector-top">
+                                    <div class="prof-sector-info">
+                                        <svg class="prof-sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                        </svg>
+                                        <div>
+                                            <div class="prof-sector-name">Insurance</div>
+                                            <div class="prof-sector-count">0 of 5 modules</div>
+                                        </div>
+                                    </div>
+                                    <div class="prof-sector-pct">0%</div>
+                                </div>
+                                <div class="prof-progress-track">
+                                    <div class="prof-progress-bar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- right column (sidebar) -->
+                <div class="prof-sidebar">
+                    <!-- achievements -->
+                    <div class="prof-card glass-card">
+                        <div class="prof-card-header">
+                            <div class="prof-card-icon-box">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="7"></circle>
+                                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                </svg>
+                            </div>
+                            <h2 class="prof-card-title">Achievements</h2>
+                        </div>
+                        <div class="prof-achievements-grid">
+                            <!-- earned -->
+                            <div class="prof-achievement earned">
+                                <div class="prof-achievement-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <circle cx="12" cy="12" r="6"></circle>
+                                        <circle cx="12" cy="12" r="2"></circle>
+                                    </svg>
+                                </div>
+                                <div class="prof-achievement-title">First Module</div>
+                                <div class="prof-achievement-desc">Completed Investment Banking 101</div>
+                            </div>
+                            <div class="prof-achievement earned">
+                                <div class="prof-achievement-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                    </svg>
+                                </div>
+                                <div class="prof-achievement-title">Three Week Streak</div>
+                                <div class="prof-achievement-desc">21 consecutive days of learning</div>
+                            </div>
+                            <div class="prof-achievement earned">
+                                <div class="prof-achievement-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                    </svg>
+                                </div>
+                                <div class="prof-achievement-title">Deal Analyst</div>
+                                <div class="prof-achievement-desc">Mastered M&A fundamentals</div>
+                            </div>
+                            <!-- locked -->
+                            <div class="prof-achievement locked">
+                                <div class="prof-achievement-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="prof-achievement-title">Markets Expert</div>
+                                <div class="prof-achievement-desc">Completed all Capital Markets modules</div>
+                            </div>
+                            <div class="prof-achievement locked">
+                                <div class="prof-achievement-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="8" r="7"></circle>
+                                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="prof-achievement-title">Industry Leader</div>
+                                <div class="prof-achievement-desc">Completed 50+ modules</div>
+                            </div>
+                            <div class="prof-achievement locked">
+                                <div class="prof-achievement-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="9" y1="3" x2="9" y2="21"></line>
+                                    </svg>
+                                </div>
+                                <div class="prof-achievement-title">Sector Specialist</div>
+                                <div class="prof-achievement-desc">100% completion in any sector</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- keep learning -->
+                    <div class="prof-card glass-card prof-cta-card">
+                        <h3 class="prof-cta-title">Keep Learning</h3>
+                        <p class="prof-cta-desc">You're making excellent progress! Continue your journey to financial expertise.</p>
+                        <a href="learning.html" class="prof-cta-btn">Continue Learning</a>
+                    </div>
+
+                    <!-- quick stats -->
+                    <div class="prof-card glass-card prof-quickstats">
+                        <h3 class="prof-quickstats-title">Quick Stats</h3>
+                        <div class="prof-quickstats-list">
+                            <div class="prof-quickstat-row">
+                                <span class="prof-quickstat-label">Learning Time</span>
+                                <span class="prof-quickstat-value">42.5 hours</span>
+                            </div>
+                            <div class="prof-quickstat-row">
+                                <span class="prof-quickstat-label">Avg. Daily Progress</span>
+                                <span class="prof-quickstat-value">2.3 modules</span>
+                            </div>
+                            <div class="prof-quickstat-row">
+                                <span class="prof-quickstat-label">Next Milestone</span>
+                                <span class="prof-quickstat-value">50 modules</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- full-width: skill development -->
+            <div class="prof-card glass-card prof-full-card">
+                <div class="prof-card-header">
+                    <div class="prof-card-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <h2 class="prof-card-title">Skill Development</h2>
+                </div>
+                <div class="prof-skills-grid">
+                    <div class="prof-skill-item">
+                        <div class="prof-skill-top">
+                            <span class="prof-skill-name">Financial Modeling</span>
+                            <span class="prof-skill-pct">75%</span>
+                        </div>
+                        <div class="prof-progress-track">
+                            <div class="prof-progress-bar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="prof-skill-item">
+                        <div class="prof-skill-top">
+                            <span class="prof-skill-name">Valuation Analysis</span>
+                            <span class="prof-skill-pct">65%</span>
+                        </div>
+                        <div class="prof-progress-track">
+                            <div class="prof-progress-bar" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="prof-skill-item">
+                        <div class="prof-skill-top">
+                            <span class="prof-skill-name">M&A Process</span>
+                            <span class="prof-skill-pct">55%</span>
+                        </div>
+                        <div class="prof-progress-track">
+                            <div class="prof-progress-bar" style="width: 55%"></div>
+                        </div>
+                    </div>
+                    <div class="prof-skill-item">
+                        <div class="prof-skill-top">
+                            <span class="prof-skill-name">Market Research</span>
+                            <span class="prof-skill-pct">40%</span>
+                        </div>
+                        <div class="prof-progress-track">
+                            <div class="prof-progress-bar" style="width: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- full-width: recent activity -->
+            <div class="prof-card glass-card prof-full-card">
+                <div class="prof-card-header">
+                    <div class="prof-card-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h2 class="prof-card-title">Recent Activity</h2>
+                </div>
+                <div class="prof-activity-grid">
+                    <!-- completed -->
+                    <div class="prof-activity-item">
+                        <div class="prof-activity-dot completed">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <div class="prof-activity-text">
+                            <div class="prof-activity-module">M&A Valuation Methods</div>
+                            <div class="prof-activity-sector">Investment Banking</div>
+                            <div class="prof-activity-date">Today</div>
+                        </div>
+                        <span class="prof-activity-badge completed">Completed</span>
+                    </div>
+                    <div class="prof-activity-item">
+                        <div class="prof-activity-dot completed">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <div class="prof-activity-text">
+                            <div class="prof-activity-module">DCF Modeling</div>
+                            <div class="prof-activity-sector">Investment Banking</div>
+                            <div class="prof-activity-date">Today</div>
+                        </div>
+                        <span class="prof-activity-badge completed">Completed</span>
+                    </div>
+                    <!-- in progress -->
+                    <div class="prof-activity-item">
+                        <div class="prof-activity-dot in-progress">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            </svg>
+                        </div>
+                        <div class="prof-activity-text">
+                            <div class="prof-activity-module">Equity Capital Markets</div>
+                            <div class="prof-activity-sector">Capital Markets</div>
+                            <div class="prof-activity-date">Yesterday</div>
+                        </div>
+                    </div>
+                    <!-- completed -->
+                    <div class="prof-activity-item">
+                        <div class="prof-activity-dot completed">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <div class="prof-activity-text">
+                            <div class="prof-activity-module">Debt Financing Structures</div>
+                            <div class="prof-activity-sector">Capital Markets</div>
+                            <div class="prof-activity-date">2 days ago</div>
+                        </div>
+                        <span class="prof-activity-badge completed">Completed</span>
+                    </div>
+                    <!-- in progress -->
+                    <div class="prof-activity-item">
+                        <div class="prof-activity-dot in-progress">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            </svg>
+                        </div>
+                        <div class="prof-activity-text">
+                            <div class="prof-activity-module">Private Equity Overview</div>
+                            <div class="prof-activity-sector">Asset Management</div>
+                            <div class="prof-activity-date">3 days ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../../../assets/finlit-logo.png" alt="FinLit Logo" class="footer-logo-img">
+                        <h3 class="footer-title">FinLit</h3>
+                    </div>
+                    <p class="footer-description">Financial Literacy Platform</p>
+                    <p class="footer-subdesc">Empowering professionals with institutional-grade learning tools, market data, and career resources.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="X">
+                            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Platform</h4>
+                        <ul>
+                            <li><a href="#">Learning Paths</a></li>
+                            <li><a href="#">Resources</a></li>
+                            <li><a href="#">Market Data</a></li>
+                            <li><a href="#">Case Studies</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Tools</h4>
+                        <ul>
+                            <li><a href="#">Financial Calculators</a></li>
+                            <li><a href="#">Model Templates</a></li>
+                            <li><a href="#">Deal Analysis</a></li>
+                            <li><a href="#">Glossary</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Partners</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 FinLit. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/profile.js"></script>
+</body>
+</html>

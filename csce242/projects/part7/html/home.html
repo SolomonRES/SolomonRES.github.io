@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinLit</title>
+    <link rel="icon" type="image/png" href="../../../assets/favicon.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- navigation -->
+    <nav class="nav-wrapper">
+        <div class="nav-container">
+            <div class="nav-content">
+                <!-- logo -->
+                <a href="#" class="logo">
+                    <img src="../../../assets/finlit-logo.png" alt="FinLit Logo" class="logo-img-icon">
+                    <span class="logo-text">FinLit</span>
+                </a>
+
+                <!-- search bar - desktop only -->
+                <div class="search-container">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" class="search-input" placeholder="Search modules, topics, resources...">
+                </div>
+
+                <!-- navigation links - desktop only -->
+                <div class="nav-links">
+                    <a href="learning.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                        Learning
+                    </a>
+                    <a href="tools.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                        Tools
+                    </a>
+                    <a href="markets.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                            <polyline points="16 7 22 7 22 13"></polyline>
+                        </svg>
+                        Markets
+                    </a>
+                    <a href="resources.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                        Resources
+                    </a>
+                </div>
+
+                <!-- user profile -->
+                <a href="profile.html" class="profile-link">
+                    <svg class="profile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </a>
+
+                <!-- hamburger menu button - mobile only -->
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- mobile side panel overlay -->
+    <div class="side-panel-overlay" id="sidePanelOverlay"></div>
+    <aside class="side-panel" id="sidePanel">
+        <div class="side-panel-decoration"></div>
+        <div class="side-panel-header">
+            <a href="#" class="logo">
+                <img src="../../../assets/finlit-logo.png" alt="FinLit Logo" class="logo-img-icon">
+                <span class="logo-text">FinLit</span>
+            </a>
+            <button class="side-panel-close" id="sidePanelClose" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="side-panel-nav">
+            <a href="learning.html" class="side-panel-link" style="--delay: 0">
+                <div class="side-panel-icon-wrapper">
+                    <svg class="side-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                    </svg>
+                </div>
+                <div class="side-panel-link-text">
+                    <span class="side-panel-link-title">Learning</span>
+                    <span class="side-panel-link-desc">Courses & modules</span>
+                </div>
+                <svg class="side-panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <a href="tools.html" class="side-panel-link" style="--delay: 1">
+                <div class="side-panel-icon-wrapper">
+                    <svg class="side-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                    </svg>
+                </div>
+                <div class="side-panel-link-text">
+                    <span class="side-panel-link-title">Tools</span>
+                    <span class="side-panel-link-desc">Calculators & models</span>
+                </div>
+                <svg class="side-panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <a href="markets.html" class="side-panel-link" style="--delay: 2">
+                <div class="side-panel-icon-wrapper">
+                    <svg class="side-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                        <polyline points="16 7 22 7 22 13"></polyline>
+                    </svg>
+                </div>
+                <div class="side-panel-link-text">
+                    <span class="side-panel-link-title">Markets</span>
+                    <span class="side-panel-link-desc">Live data & analysis</span>
+                </div>
+                <svg class="side-panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <a href="resources.html" class="side-panel-link" style="--delay: 3">
+                <div class="side-panel-icon-wrapper">
+                    <svg class="side-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                </div>
+                <div class="side-panel-link-text">
+                    <span class="side-panel-link-title">Resources</span>
+                    <span class="side-panel-link-desc">Guides & references</span>
+                </div>
+                <svg class="side-panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+
+            <div class="side-panel-divider"></div>
+
+            <a href="profile.html" class="side-panel-link" style="--delay: 4">
+                <div class="side-panel-icon-wrapper">
+                    <svg class="side-panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <div class="side-panel-link-text">
+                    <span class="side-panel-link-title">Profile</span>
+                    <span class="side-panel-link-desc">Account & settings</span>
+                </div>
+                <svg class="side-panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+        </nav>
+        <div class="side-panel-footer">
+            <p>© 2026 FinLit</p>
+        </div>
+    </aside>
+
+    <!-- mobile hero - only visible on mobile -->
+    <section class="mobile-hero">
+        <div class="mobile-hero-background">
+            <div class="grid-pattern"></div>
+            <!-- animated financial data background (mobile-optimized subset) -->
+            <div class="financial-data-bg">
+                <div class="data-point data-number" style="left: 8%; top: 12%; animation-delay: 0.0s;">$4523.80</div>
+                <div class="data-point data-number" style="left: 82%; top: 8%; animation-delay: 0.7s;">$889.04</div>
+                <div class="data-point data-number" style="left: 45%; top: 65%; animation-delay: 1.8s;">$9082.85</div>
+                <div class="data-point data-number" style="left: 18%; top: 80%; animation-delay: 2.8s;">$4151.54</div>
+                <div class="data-point data-number" style="left: 65%; top: 5%; animation-delay: 1.0s;">$2341.67</div>
+                <div class="data-point data-number" style="left: 72%; top: 85%; animation-delay: 3.8s;">$7925.12</div>
+                <div class="data-point data-number" style="left: 5%; top: 45%; animation-delay: 2.1s;">$5107.48</div>
+                <div class="data-point data-number" style="left: 90%; top: 55%; animation-delay: 3.1s;">$3892.20</div>
+                <div class="data-point data-number" style="left: 35%; top: 30%; animation-delay: 1.4s;">$1651.98</div>
+                <div class="data-point data-number" style="left: 55%; top: 90%; animation-delay: 2.4s;">$6724.89</div>
+
+                <div class="data-point data-ticker positive" style="left: 20%; top: 55%; animation-delay: 0.3s;">
+                    <span>AAPL 182.45</span>
+                    <span class="trend-icon">▲</span>
+                </div>
+                <div class="data-point data-ticker negative" style="left: 68%; top: 25%; animation-delay: 1.0s;">
+                    <span>GOOGL 141.22</span>
+                    <span class="trend-icon">▼</span>
+                </div>
+                <div class="data-point data-ticker positive" style="left: 10%; top: 35%; animation-delay: 2.1s;">
+                    <span>MSFT 420.15</span>
+                    <span class="trend-icon">▲</span>
+                </div>
+                <div class="data-point data-ticker negative" style="left: 75%; top: 70%; animation-delay: 3.1s;">
+                    <span>JPM 168.90</span>
+                    <span class="trend-icon">▼</span>
+                </div>
+                <div class="data-point data-ticker positive" style="left: 50%; top: 18%; animation-delay: 1.4s;">
+                    <span>GS 385.20</span>
+                    <span class="trend-icon">▲</span>
+                </div>
+                <div class="data-point data-ticker negative" style="left: 30%; top: 75%; animation-delay: 2.4s;">
+                    <span>BAC 51.57</span>
+                    <span class="trend-icon">▼</span>
+                </div>
+
+                <div class="data-point data-chart" style="left: 58%; top: 12%; animation-delay: 0.5s;">DCF</div>
+                <div class="data-point data-chart" style="left: 28%; top: 42%; animation-delay: 1.6s;">M&A</div>
+                <div class="data-point data-chart" style="left: 72%; top: 50%; animation-delay: 2.6s;">WACC</div>
+                <div class="data-point data-chart" style="left: 10%; top: 62%; animation-delay: 1.2s;">ROE</div>
+                <div class="data-point data-chart" style="left: 85%; top: 30%; animation-delay: 3.7s;">IRR</div>
+                <div class="data-point data-chart" style="left: 42%; top: 78%; animation-delay: 2.3s;">NPV</div>
+                <div class="data-point data-chart" style="left: 15%; top: 15%; animation-delay: 0.9s;">IPO</div>
+                <div class="data-point data-chart" style="left: 65%; top: 88%; animation-delay: 3.3s;">LBO</div>
+
+                <div class="data-point data-arrow positive" style="left: 48%; top: 8%; animation-delay: 0.9s;">▲ +1.43%</div>
+                <div class="data-point data-arrow negative" style="left: 88%; top: 38%; animation-delay: 1.9s;">▼ -2.90%</div>
+                <div class="data-point data-arrow positive" style="left: 38%; top: 85%; animation-delay: 3.0s;">▲ +3.84%</div>
+                <div class="data-point data-arrow negative" style="left: 62%; top: 45%; animation-delay: 2.3s;">▼ -1.85%</div>
+                <div class="data-point data-arrow positive" style="left: 5%; top: 28%; animation-delay: 0.3s;">▲ +2.61%</div>
+                <div class="data-point data-arrow negative" style="left: 80%; top: 8%; animation-delay: 1.2s;">▼ -0.72%</div>
+
+                <div class="data-table" style="left: 15%; top: 8%; animation-delay: 0.0s;">
+                    <table>
+                        <tr><td>$665</td><td>42.3</td><td>79.2</td></tr>
+                        <tr><td>$257</td><td>28.1</td><td>$133</td></tr>
+                    </table>
+                </div>
+                <div class="data-table" style="left: 65%; top: 60%; animation-delay: 3.5s;">
+                    <table>
+                        <tr><td>84.7</td><td>36.8</td><td>48.6</td></tr>
+                        <tr><td>$412</td><td>91.2</td><td>67.5</td></tr>
+                    </table>
+                </div>
+
+                <div class="candlestick-chart" style="left: 6%; top: 48%; animation-delay: 1.8s;">
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                </div>
+                <div class="candlestick-chart" style="left: 85%; top: 18%; animation-delay: 4.2s;">
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                </div>
+                <div class="candlestick-chart" style="left: 22%; top: 88%; animation-delay: 2.8s;">
+                    <div class="candle green"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                </div>
+                <div class="candlestick-chart" style="left: 70%; top: 4%; animation-delay: 1.0s;">
+                    <div class="candle red"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mobile-hero-content">
+            <!-- glass card -->
+            <div class="glass-card mobile-glass-card">
+                <!-- animated logo -->
+                <div class="animated-logo">
+                    <div class="animated-logo-icon">
+                        <div class="animated-logo-icon-inner"></div>
+                    </div>
+                    <div class="animated-logo-text">FinLit</div>
+                </div>
+
+                <!-- tagline -->
+                <p class="tagline">
+                    Breaking down complex financial concepts into practical, easy-to-understand guidance
+                </p>
+
+                <!-- hero stats -->
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-value">6</div>
+                        <div class="stat-label">Industry Sectors</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">80+</div>
+                        <div class="stat-label">Modules</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">Global</div>
+                        <div class="stat-label">Coverage</div>
+                    </div>
+                </div>
+
+                <!-- cta buttons -->
+                <div class="cta-buttons">
+                    <a href="learning.html" class="btn btn-primary">
+                        <span>Get Started</span>
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                    <a href="#platform" class="btn btn-secondary">
+                        <span>Explore</span>
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- mobile search -->
+            <div class="mobile-search-container">
+                <svg class="mobile-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input type="text" class="mobile-search-input" placeholder="Search modules, topics, resources...">
+            </div>
+        </div>
+
+        <!-- scroll indicator -->
+        <div class="scroll-indicator">
+            <div class="platform-label">
+                <span>Financial Literacy Platform</span>
+            </div>
+            <div class="scroll-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- desktop hero -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="grid-pattern"></div>
+            <!-- animated financial data background -->
+            <div class="financial-data-bg">
+                <!-- simple data points (numbers) -->
+                <div class="data-point data-number" style="left: 10%; top: 20%; animation-delay: 0.0s;">$4523.80</div>
+                <div class="data-point data-number" style="left: 85%; top: 15%; animation-delay: 0.7s;">$889.04</div>
+                <div class="data-point data-number" style="left: 45%; top: 70%; animation-delay: 1.8s;">$9082.85</div>
+                <div class="data-point data-number" style="left: 20%; top: 85%; animation-delay: 2.8s;">$4151.54</div>
+                <div class="data-point data-number" style="left: 60%; top: 8%; animation-delay: 1.0s;">$2341.67</div>
+                <div class="data-point data-number" style="left: 72%; top: 88%; animation-delay: 3.8s;">$7925.12</div>
+                <div class="data-point data-number" style="left: 28%; top: 25%; animation-delay: 2.1s;">$5107.48</div>
+                <div class="data-point data-number" style="left: 92%; top: 62%; animation-delay: 3.1s;">$3892.20</div>
+                <div class="data-point data-number" style="left: 3%; top: 47%; animation-delay: 1.4s;">$1651.98</div>
+                <div class="data-point data-number" style="left: 48%; top: 33%; animation-delay: 2.4s;">$6724.89</div>
+                <div class="data-point data-number" style="left: 15%; top: 5%; animation-delay: 0.3s;">$5956.74</div>
+                <div class="data-point data-number" style="left: 78%; top: 42%; animation-delay: 1.2s;">$7767.93</div>
+                <div class="data-point data-number" style="left: 55%; top: 58%; animation-delay: 2.3s;">$3214.05</div>
+                <div class="data-point data-number" style="left: 38%; top: 12%; animation-delay: 3.3s;">$6603.56</div>
+                <div class="data-point data-number" style="left: 93%; top: 78%; animation-delay: 4.2s;">$447.17</div>
+                <div class="data-point data-number" style="left: 4%; top: 72%; animation-delay: 0.9s;">$5664.83</div>
+                <div class="data-point data-number" style="left: 67%; top: 3%; animation-delay: 1.9s;">$8102.87</div>
+                <div class="data-point data-number" style="left: 82%; top: 92%; animation-delay: 3.0s;">$2927.40</div>
+                <div class="data-point data-number" style="left: 33%; top: 38%; animation-delay: 4.0s;">$641.26</div>
+                <div class="data-point data-number" style="left: 52%; top: 82%; animation-delay: 0.2s;">$9431.18</div>
+                
+                <!-- ticker boxes (company symbols with trend) -->
+                <div class="data-point data-ticker positive" style="left: 25%; top: 60%; animation-delay: 0.3s;">
+                    <span>AAPL 182.45</span>
+                    <span class="trend-icon">▲</span>
+                </div>
+                <div class="data-point data-ticker negative" style="left: 70%; top: 30%; animation-delay: 1.0s;">
+                    <span>GOOGL 141.22</span>
+                    <span class="trend-icon">▼</span>
+                </div>
+                <div class="data-point data-ticker positive" style="left: 15%; top: 40%; animation-delay: 2.1s;">
+                    <span>MSFT 420.15</span>
+                    <span class="trend-icon">▲</span>
+                </div>
+                <div class="data-point data-ticker negative" style="left: 80%; top: 75%; animation-delay: 3.1s;">
+                    <span>JPM 168.90</span>
+                    <span class="trend-icon">▼</span>
+                </div>
+                <div class="data-point data-ticker positive" style="left: 55%; top: 25%; animation-delay: 1.4s;">
+                    <span>BLK 240.23</span>
+                    <span class="trend-icon">▲</span>
+                </div>
+                <div class="data-point data-ticker negative" style="left: 35%; top: 80%; animation-delay: 2.4s;">
+                    <span>BAC 51.57</span>
+                    <span class="trend-icon">▼</span>
+                </div>
+                <div class="data-point data-ticker positive" style="left: 8%; top: 12%; animation-delay: 0.7s;">
+                    <span>NVDA 518.67</span>
+                    <span class="trend-icon">▲</span>
+                </div>
+                <div class="data-point data-ticker negative" style="left: 92%; top: 50%; animation-delay: 3.5s;">
+                    <span>TSLA 245.80</span>
+                    <span class="trend-icon">▼</span>
+                </div>
+                <div class="data-point data-ticker positive" style="left: 42%; top: 5%; animation-delay: 1.8s;">
+                    <span>GS 385.20</span>
+                    <span class="trend-icon">▲</span>
+                </div>
+                <div class="data-point data-ticker negative" style="left: 65%; top: 92%; animation-delay: 2.8s;">
+                    <span>META 352.44</span>
+                    <span class="trend-icon">▼</span>
+                </div>
+                <div class="data-point data-ticker positive" style="left: 3%; top: 8%; animation-delay: 0.2s;">
+                    <span>AMZN 51.56</span>
+                    <span class="trend-icon">▲</span>
+                </div>
+                <div class="data-point data-ticker negative" style="left: 88%; top: 85%; animation-delay: 2.3s;">
+                    <span>C 447.17</span>
+                    <span class="trend-icon">▼</span>
+                </div>
+                <div class="data-point data-ticker positive" style="left: 47%; top: 92%; animation-delay: 3.8s;">
+                    <span>AAPL 443.35</span>
+                    <span class="trend-icon">▲</span>
+                </div>
+                <div class="data-point data-ticker negative" style="left: 18%; top: 52%; animation-delay: 1.2s;">
+                    <span>WFC 62.14</span>
+                    <span class="trend-icon">▼</span>
+                </div>
+                <div class="data-point data-ticker positive" style="left: 73%; top: 18%; animation-delay: 3.3s;">
+                    <span>V 285.90</span>
+                    <span class="trend-icon">▲</span>
+                </div>
+                <div class="data-point data-ticker negative" style="left: 30%; top: 95%; animation-delay: 2.4s;">
+                    <span>MS 97.45</span>
+                    <span class="trend-icon">▼</span>
+                </div>
+                
+                <!-- chart labels (financial terms) -->
+                <div class="data-point data-chart" style="left: 60%; top: 15%; animation-delay: 0.5s;">DCF</div>
+                <div class="data-point data-chart" style="left: 30%; top: 45%; animation-delay: 1.6s;">M&A</div>
+                <div class="data-point data-chart" style="left: 75%; top: 55%; animation-delay: 2.6s;">WACC</div>
+                <div class="data-point data-chart" style="left: 12%; top: 65%; animation-delay: 1.2s;">ROE</div>
+                <div class="data-point data-chart" style="left: 88%; top: 35%; animation-delay: 3.7s;">IRR</div>
+                <div class="data-point data-chart" style="left: 38%; top: 72%; animation-delay: 2.3s;">NPV</div>
+                <div class="data-point data-chart" style="left: 50%; top: 48%; animation-delay: 3.3s;">LBO</div>
+                <div class="data-point data-chart" style="left: 22%; top: 18%; animation-delay: 0.9s;">IPO</div>
+                <div class="data-point data-chart" style="left: 78%; top: 82%; animation-delay: 4.0s;">EBITDA</div>
+                <div class="data-point data-chart" style="left: 5%; top: 55%; animation-delay: 1.9s;">P/E</div>
+                <div class="data-point data-chart" style="left: 90%; top: 8%; animation-delay: 0.3s;">WACC</div>
+                <div class="data-point data-chart" style="left: 48%; top: 95%; animation-delay: 1.4s;">ROE</div>
+                <div class="data-point data-chart" style="left: 15%; top: 28%; animation-delay: 2.8s;">M&A</div>
+                <div class="data-point data-chart" style="left: 82%; top: 68%; animation-delay: 3.5s;">EBITDA</div>
+                <div class="data-point data-chart" style="left: 35%; top: 8%; animation-delay: 0.9s;">DCF</div>
+                <div class="data-point data-chart" style="left: 68%; top: 42%; animation-delay: 2.4s;">LBO</div>
+                <div class="data-point data-chart" style="left: 7%; top: 82%; animation-delay: 4.2s;">IRR</div>
+                
+                <!-- percentage arrows -->
+                <div class="data-point data-arrow positive" style="left: 50%; top: 10%; animation-delay: 0.9s;">▲ +1.43%</div>
+                <div class="data-point data-arrow negative" style="left: 90%; top: 40%; animation-delay: 1.9s;">▼ -2.90%</div>
+                <div class="data-point data-arrow positive" style="left: 40%; top: 90%; animation-delay: 3.0s;">▲ +3.84%</div>
+                <div class="data-point data-arrow negative" style="left: 65%; top: 50%; animation-delay: 2.3s;">▼ -1.85%</div>
+                <div class="data-point data-arrow positive" style="left: 5%; top: 30%; animation-delay: 0.3s;">▲ +2.61%</div>
+                <div class="data-point data-arrow negative" style="left: 82%; top: 10%; animation-delay: 1.2s;">▼ -0.72%</div>
+                <div class="data-point data-arrow positive" style="left: 17%; top: 75%; animation-delay: 2.6s;">▲ +4.21%</div>
+                <div class="data-point data-arrow negative" style="left: 95%; top: 28%; animation-delay: 3.7s;">▼ -3.15%</div>
+                <div class="data-point data-arrow positive" style="left: 32%; top: 55%; animation-delay: 1.6s;">▲ +1.94%</div>
+                <div class="data-point data-arrow negative" style="left: 58%; top: 85%; animation-delay: 3.3s;">▼ -2.48%</div>
+                
+                <!-- mini spreadsheet tables -->
+                <div class="data-table" style="left: 18%; top: 10%; animation-delay: 0.0s;">
+                    <table>
+                        <tr><td>$665</td><td>42.3</td><td>79.2</td></tr>
+                        <tr><td>$257</td><td>28.1</td><td>$133</td></tr>
+                        <tr><td>93.7</td><td>$905</td><td>43.1</td></tr>
+                    </table>
+                </div>
+                <div class="data-table" style="left: 68%; top: 65%; animation-delay: 3.5s;">
+                    <table>
+                        <tr><td>84.7</td><td>36.8</td><td>48.6</td></tr>
+                        <tr><td>$412</td><td>91.2</td><td>67.5</td></tr>
+                        <tr><td>29.4</td><td>$783</td><td>55.9</td></tr>
+                    </table>
+                </div>
+                <div class="data-table" style="left: 42%; top: 35%; animation-delay: 5.3s;">
+                    <table>
+                        <tr><td>$931</td><td>64.1</td><td>97.8</td></tr>
+                        <tr><td>18.5</td><td>$546</td><td>72.3</td></tr>
+                        <tr><td>45.9</td><td>83.7</td><td>$219</td></tr>
+                    </table>
+                </div>
+                <div class="data-table" style="left: 8%; top: 78%; animation-delay: 1.8s;">
+                    <table>
+                        <tr><td>$214</td><td>58.9</td><td>31.2</td></tr>
+                        <tr><td>74.6</td><td>$689</td><td>12.8</td></tr>
+                        <tr><td>46.3</td><td>21.7</td><td>$957</td></tr>
+                    </table>
+                </div>
+                <div class="data-table" style="left: 85%; top: 8%; animation-delay: 4.2s;">
+                    <table>
+                        <tr><td>19.4</td><td>$782</td><td>54.3</td></tr>
+                        <tr><td>$346</td><td>67.1</td><td>92.8</td></tr>
+                        <tr><td>35.9</td><td>16.5</td><td>$521</td></tr>
+                    </table>
+                </div>
+                
+                <!-- candlestick mini charts -->
+                <div class="candlestick-chart" style="left: 8%; top: 50%; animation-delay: 1.8s;">
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                </div>
+                <div class="candlestick-chart" style="left: 88%; top: 20%; animation-delay: 4.2s;">
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                </div>
+                <div class="candlestick-chart" style="left: 25%; top: 92%; animation-delay: 2.8s;">
+                    <div class="candle green"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                </div>
+                <div class="candlestick-chart" style="left: 72%; top: 5%; animation-delay: 1.0s;">
+                    <div class="candle red"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                </div>
+                <div class="candlestick-chart" style="left: 45%; top: 15%; animation-delay: 2.4s;">
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                </div>
+                <div class="candlestick-chart" style="left: 62%; top: 78%; animation-delay: 3.5s;">
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle green"></div>
+                </div>
+                <div class="candlestick-chart" style="left: 3%; top: 88%; animation-delay: 0.3s;">
+                    <div class="candle green"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                </div>
+                <div class="candlestick-chart" style="left: 90%; top: 72%; animation-delay: 1.6s;">
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle green"></div>
+                </div>
+                <div class="candlestick-chart" style="left: 18%; top: 35%; animation-delay: 3.1s;">
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                </div>
+                <div class="candlestick-chart" style="left: 82%; top: 45%; animation-delay: 2.1s;">
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                </div>
+
+                <!-- additional data numbers for density -->
+                <div class="data-point data-number" style="left: 7%; top: 15%; animation-delay: 4.5s;">$4377.84</div>
+                <div class="data-point data-number" style="left: 88%; top: 28%; animation-delay: 4.9s;">$9475.98</div>
+                <div class="data-point data-number" style="left: 95%; top: 52%; animation-delay: 4.7s;">$8248.54</div>
+                <div class="data-point data-number" style="left: 12%; top: 62%; animation-delay: 5.1s;">$5638.56</div>
+                <div class="data-point data-number" style="left: 75%; top: 82%; animation-delay: 5.3s;">$8963.56</div>
+                <div class="data-point data-number" style="left: 22%; top: 93%; animation-delay: 5.4s;">$6831.27</div>
+                <div class="data-point data-number" style="left: 58%; top: 5%; animation-delay: 5.6s;">$9139.02</div>
+                <div class="data-point data-number" style="left: 97%; top: 70%; animation-delay: 5.8s;">$5458.88</div>
+                <div class="data-point data-number" style="left: 2%; top: 35%; animation-delay: 5.9s;">$1843.57</div>
+                <div class="data-point data-number" style="left: 40%; top: 97%; animation-delay: 4.6s;">$3005.98</div>
+                <div class="data-point data-number" style="left: 62%; top: 18%; animation-delay: 5.2s;">$7283.41</div>
+                <div class="data-point data-number" style="left: 83%; top: 5%; animation-delay: 5.4s;">$2097.63</div>
+                <div class="data-point data-number" style="left: 5%; top: 90%; animation-delay: 5.9s;">$8412.09</div>
+                <div class="data-point data-number" style="left: 50%; top: 50%; animation-delay: 6.1s;">$4692.35</div>
+                <div class="data-point data-number" style="left: 30%; top: 2%; animation-delay: 6.3s;">$1156.72</div>
+
+                <!-- additional stock tickers -->
+                <div class="data-point data-ticker positive" style="left: 5%; top: 25%; animation-delay: 4.5s;">
+                    <span>META 415.61</span>
+                    <span class="trend-icon">▲</span>
+                </div>
+                <div class="data-point data-ticker positive" style="left: 80%; top: 10%; animation-delay: 4.9s;">
+                    <span>MSFT 525.37</span>
+                    <span class="trend-icon">▲</span>
+                </div>
+                <div class="data-point data-ticker negative" style="left: 90%; top: 55%; animation-delay: 5.3s;">
+                    <span>AMZN 187.24</span>
+                    <span class="trend-icon">▼</span>
+                </div>
+                <div class="data-point data-ticker positive" style="left: 15%; top: 70%; animation-delay: 5.6s;">
+                    <span>GOOGL 277.46</span>
+                    <span class="trend-icon">▲</span>
+                </div>
+                <div class="data-point data-ticker negative" style="left: 60%; top: 90%; animation-delay: 5.9s;">
+                    <span>BRK.B 425.80</span>
+                    <span class="trend-icon">▼</span>
+                </div>
+                <div class="data-point data-ticker positive" style="left: 35%; top: 15%; animation-delay: 4.7s;">
+                    <span>JPM 275.82</span>
+                    <span class="trend-icon">▲</span>
+                </div>
+                <div class="data-point data-ticker negative" style="left: 85%; top: 38%; animation-delay: 5.1s;">
+                    <span>UNH 512.33</span>
+                    <span class="trend-icon">▼</span>
+                </div>
+                <div class="data-point data-ticker positive" style="left: 93%; top: 85%; animation-delay: 5.4s;">
+                    <span>NVDA 439.71</span>
+                    <span class="trend-icon">▲</span>
+                </div>
+                <div class="data-point data-ticker negative" style="left: 25%; top: 48%; animation-delay: 5.8s;">
+                    <span>HD 362.15</span>
+                    <span class="trend-icon">▼</span>
+                </div>
+                <div class="data-point data-ticker positive" style="left: 70%; top: 65%; animation-delay: 6.1s;">
+                    <span>DIS 108.92</span>
+                    <span class="trend-icon">▲</span>
+                </div>
+
+                <!-- additional percentage arrows -->
+                <div class="data-point data-arrow positive" style="left: 88%; top: 18%; animation-delay: 4.5s;">▲ 0.18%</div>
+                <div class="data-point data-arrow negative" style="left: 92%; top: 32%; animation-delay: 4.9s;">▼ -1.49%</div>
+                <div class="data-point data-arrow negative" style="left: 85%; top: 48%; animation-delay: 5.3s;">▼ -4.18%</div>
+                <div class="data-point data-arrow positive" style="left: 8%; top: 55%; animation-delay: 5.6s;">▲ 1.45%</div>
+                <div class="data-point data-arrow positive" style="left: 12%; top: 78%; animation-delay: 5.9s;">▲ 1.78%</div>
+                <div class="data-point data-arrow negative" style="left: 55%; top: 92%; animation-delay: 6.3s;">▼ -3.55%</div>
+                <div class="data-point data-arrow positive" style="left: 90%; top: 60%; animation-delay: 4.7s;">▲ 0.05%</div>
+                <div class="data-point data-arrow positive" style="left: 18%; top: 8%; animation-delay: 5.1s;">▲ 2.20%</div>
+                <div class="data-point data-arrow negative" style="left: 45%; top: 65%; animation-delay: 5.4s;">▼ -0.93%</div>
+                <div class="data-point data-arrow positive" style="left: 72%; top: 15%; animation-delay: 5.8s;">▲ 3.12%</div>
+                <div class="data-point data-arrow negative" style="left: 3%; top: 42%; animation-delay: 6.1s;">▼ -2.67%</div>
+                <div class="data-point data-arrow positive" style="left: 65%; top: 75%; animation-delay: 6.5s;">▲ 0.84%</div>
+
+                <!-- additional mini data tables -->
+                <div class="data-table" style="left: 2%; top: 22%; animation-delay: 4.5s;">
+                    <table>
+                        <tr><td>$221</td><td>$722</td><td>$731</td></tr>
+                        <tr><td>75.1</td><td>22.5</td><td>$153</td></tr>
+                        <tr><td>$353</td><td>$324</td><td>$350</td></tr>
+                    </table>
+                </div>
+                <div class="data-table" style="left: 78%; top: 80%; animation-delay: 5.6s;">
+                    <table>
+                        <tr><td>$675</td><td>56.1</td><td>$656</td></tr>
+                        <tr><td>0.7</td><td>22.3</td><td>$280</td></tr>
+                        <tr><td>$510</td><td>26.4</td><td>11.3</td></tr>
+                    </table>
+                </div>
+                <div class="data-table" style="left: 55%; top: 88%; animation-delay: 4.9s;">
+                    <table>
+                        <tr><td>73.8</td><td>23.6</td><td>5.2</td></tr>
+                        <tr><td>80.0</td><td>$345</td><td>81.0</td></tr>
+                        <tr><td>77.9</td><td>$355</td><td>33.5</td></tr>
+                    </table>
+                </div>
+                <div class="data-table" style="left: 90%; top: 15%; animation-delay: 5.9s;">
+                    <table>
+                        <tr><td>$189</td><td>41.7</td><td>$834</td></tr>
+                        <tr><td>62.3</td><td>$467</td><td>15.9</td></tr>
+                        <tr><td>$723</td><td>38.4</td><td>91.6</td></tr>
+                    </table>
+                </div>
+                <div class="data-table" style="left: 35%; top: 92%; animation-delay: 5.3s;">
+                    <table>
+                        <tr><td>$412</td><td>88.3</td><td>$196</td></tr>
+                        <tr><td>54.7</td><td>$763</td><td>29.1</td></tr>
+                        <tr><td>$308</td><td>71.5</td><td>43.8</td></tr>
+                    </table>
+                </div>
+
+                <!-- additional chart labels -->
+                <div class="data-point data-chart" style="left: 95%; top: 45%; animation-delay: 4.5s;">WACC</div>
+                <div class="data-point data-chart" style="left: 3%; top: 92%; animation-delay: 4.9s;">EBITDA</div>
+                <div class="data-point data-chart" style="left: 88%; top: 72%; animation-delay: 5.3s;">P/E</div>
+                <div class="data-point data-chart" style="left: 7%; top: 38%; animation-delay: 5.6s;">ROE</div>
+                <div class="data-point data-chart" style="left: 55%; top: 3%; animation-delay: 5.9s;">M&A</div>
+                <div class="data-point data-chart" style="left: 40%; top: 85%; animation-delay: 6.3s;">IPO</div>
+                <div class="data-point data-chart" style="left: 70%; top: 28%; animation-delay: 4.7s;">CAPM</div>
+                <div class="data-point data-chart" style="left: 20%; top: 5%; animation-delay: 5.1s;">FCF</div>
+
+                <!-- additional candlestick charts -->
+                <div class="candlestick-chart" style="left: 55%; top: 65%; animation-delay: 4.5s;">
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                </div>
+                <div class="candlestick-chart" style="left: 92%; top: 60%; animation-delay: 5.1s;">
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                </div>
+                <div class="candlestick-chart" style="left: 2%; top: 62%; animation-delay: 5.6s;">
+                    <div class="candle green"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                </div>
+                <div class="candlestick-chart" style="left: 75%; top: 92%; animation-delay: 6.1s;">
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                </div>
+                <div class="candlestick-chart" style="left: 30%; top: 70%; animation-delay: 5.3s;">
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                </div>
+                <div class="candlestick-chart" style="left: 45%; top: 42%; animation-delay: 6.3s;">
+                    <div class="candle red"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle red"></div>
+                    <div class="candle green"></div>
+                    <div class="candle green"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-inner">
+                <div class="glass-card">
+                    <!-- animated logo -->
+                    <div class="animated-logo">
+                        <div class="animated-logo-icon">
+                            <div class="animated-logo-icon-inner"></div>
+                        </div>
+                        <div class="animated-logo-text">FinLit</div>
+                    </div>
+
+                    <!-- tagline -->
+                    <p class="tagline">
+                        Breaking down complex financial concepts into practical,<br class="desktop-break">
+                        easy-to-understand guidance for decision making
+                    </p>
+
+                    <!-- hero stats -->
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <div class="stat-value">6</div>
+                            <div class="stat-label">Industry Sectors</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">80+</div>
+                            <div class="stat-label">Modules</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">Global</div>
+                            <div class="stat-label">Coverage</div>
+                        </div>
+                    </div>
+
+                    <!-- cta buttons -->
+                    <div class="cta-buttons">
+                        <a href="learning.html" class="btn btn-primary">
+                            <span>Get Started</span>
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                        <a href="#platform" class="btn btn-secondary">
+                            <span>Explore Platform</span>
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- stock ticker -->
+    <section class="ticker-section">
+        <div class="ticker-track">
+            <!-- first set -->
+            <div class="ticker-item">
+                <img src="../../../assets/gs.png" alt="" class="ticker-logo">
+                <span class="ticker-symbol">GS</span>
+                <span class="ticker-price">385.20</span>
+                <span class="ticker-change positive">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    +0.88%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <img src="../../../assets/jpmc.png" alt="" class="ticker-logo">
+                <span class="ticker-symbol">JPM</span>
+                <span class="ticker-price">168.90</span>
+                <span class="ticker-change positive">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    +0.56%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <img src="../../../assets/morgan-stanley.png" alt="" class="ticker-logo">
+                <span class="ticker-symbol">MS</span>
+                <span class="ticker-price">97.45</span>
+                <span class="ticker-change negative">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 9 12 15 6 9"></polyline>
+                    </svg>
+                    -0.41%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <img src="../../../assets/citi.png" alt="" class="ticker-logo">
+                <span class="ticker-symbol">C</span>
+                <span class="ticker-price">62.14</span>
+                <span class="ticker-change positive">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    +0.73%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <img src="../../../assets/bofa.png" alt="" class="ticker-logo">
+                <span class="ticker-symbol">BAC</span>
+                <span class="ticker-price">38.57</span>
+                <span class="ticker-change positive">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    +0.59%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <img src="../../../assets/deutsche.png" alt="" class="ticker-logo">
+                <span class="ticker-symbol">DB</span>
+                <span class="ticker-price">14.82</span>
+                <span class="ticker-change negative">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 9 12 15 6 9"></polyline>
+                    </svg>
+                    -0.29%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <img src="../../../assets/barclays.png" alt="" class="ticker-logo">
+                <span class="ticker-symbol">BCS</span>
+                <span class="ticker-price">9.84</span>
+                <span class="ticker-change positive">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    +1.14%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <img src="../../../assets/hsbc.png" alt="" class="ticker-logo">
+                <span class="ticker-symbol">HSBC</span>
+                <span class="ticker-price">41.23</span>
+                <span class="ticker-change positive">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    +0.45%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-symbol">SPX</span>
+                <span class="ticker-price">4,760.12</span>
+                <span class="ticker-change positive">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    +0.73%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-symbol">DJI</span>
+                <span class="ticker-price">37,529.84</span>
+                <span class="ticker-change positive">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    +0.84%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-symbol">IXIC</span>
+                <span class="ticker-price">14,864.85</span>
+                <span class="ticker-change negative">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 9 12 15 6 9"></polyline>
+                    </svg>
+                    -0.67%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-symbol">FTSE</span>
+                <span class="ticker-price">7,632.45</span>
+                <span class="ticker-change negative">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 9 12 15 6 9"></polyline>
+                    </svg>
+                    -0.29%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-symbol">DAX</span>
+                <span class="ticker-price">16,758.23</span>
+                <span class="ticker-change positive">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    +1.14%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-symbol">NIKKEI</span>
+                <span class="ticker-price">32,891.45</span>
+                <span class="ticker-change positive">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    +0.45%
+                </span>
+            </div>
+            
+            <!-- second set (duplicate for seamless loop) -->
+            <div class="ticker-item">
+                <img src="../../../assets/gs.png" alt="" class="ticker-logo">
+                <span class="ticker-symbol">GS</span>
+                <span class="ticker-price">385.20</span>
+                <span class="ticker-change positive">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    +0.88%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <img src="../../../assets/jpmc.png" alt="" class="ticker-logo">
+                <span class="ticker-symbol">JPM</span>
+                <span class="ticker-price">168.90</span>
+                <span class="ticker-change positive">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    +0.56%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <img src="../../../assets/morgan-stanley.png" alt="" class="ticker-logo">
+                <span class="ticker-symbol">MS</span>
+                <span class="ticker-price">97.45</span>
+                <span class="ticker-change negative">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 9 12 15 6 9"></polyline>
+                    </svg>
+                    -0.41%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <img src="../../../assets/citi.png" alt="" class="ticker-logo">
+                <span class="ticker-symbol">C</span>
+                <span class="ticker-price">62.14</span>
+                <span class="ticker-change positive">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    +0.73%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <img src="../../../assets/bofa.png" alt="" class="ticker-logo">
+                <span class="ticker-symbol">BAC</span>
+                <span class="ticker-price">38.57</span>
+                <span class="ticker-change positive">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    +0.59%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <img src="../../../assets/deutsche.png" alt="" class="ticker-logo">
+                <span class="ticker-symbol">DB</span>
+                <span class="ticker-price">14.82</span>
+                <span class="ticker-change negative">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 9 12 15 6 9"></polyline>
+                    </svg>
+                    -0.29%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <img src="../../../assets/barclays.png" alt="" class="ticker-logo">
+                <span class="ticker-symbol">BCS</span>
+                <span class="ticker-price">9.84</span>
+                <span class="ticker-change positive">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    +1.14%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <img src="../../../assets/hsbc.png" alt="" class="ticker-logo">
+                <span class="ticker-symbol">HSBC</span>
+                <span class="ticker-price">41.23</span>
+                <span class="ticker-change positive">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    +0.45%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-symbol">SPX</span>
+                <span class="ticker-price">4,760.12</span>
+                <span class="ticker-change positive">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    +0.73%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-symbol">DJI</span>
+                <span class="ticker-price">37,529.84</span>
+                <span class="ticker-change positive">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    +0.84%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-symbol">IXIC</span>
+                <span class="ticker-price">14,864.85</span>
+                <span class="ticker-change negative">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 9 12 15 6 9"></polyline>
+                    </svg>
+                    -0.67%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-symbol">FTSE</span>
+                <span class="ticker-price">7,632.45</span>
+                <span class="ticker-change negative">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 9 12 15 6 9"></polyline>
+                    </svg>
+                    -0.29%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-symbol">DAX</span>
+                <span class="ticker-price">16,758.23</span>
+                <span class="ticker-change positive">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    +1.14%
+                </span>
+            </div>
+            <div class="ticker-item">
+                <span class="ticker-symbol">NIKKEI</span>
+                <span class="ticker-price">32,891.45</span>
+                <span class="ticker-change positive">
+                    <svg class="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                    +0.45%
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- logo scroll -->
+    <section class="logo-scroll">
+        <div class="logo-track">
+            <div class="logo-item"><img src="../../../assets/gs.png" alt="Goldman Sachs" class="logo-img"> Goldman Sachs</div>
+            <div class="logo-item"><img src="../../../assets/jpmc.png" alt="JPMorgan Chase" class="logo-img"> JPMorgan Chase</div>
+            <div class="logo-item"><img src="../../../assets/morgan-stanley.png" alt="Morgan Stanley" class="logo-img"> Morgan Stanley</div>
+            <div class="logo-item"><img src="../../../assets/citi.png" alt="Citigroup" class="logo-img"> Citigroup</div>
+            <div class="logo-item"><img src="../../../assets/bofa.png" alt="Bank of America" class="logo-img"> Bank of America</div>
+            <div class="logo-item"><img src="../../../assets/deutsche.png" alt="Deutsche Bank" class="logo-img"> Deutsche Bank</div>
+            <div class="logo-item"><img src="../../../assets/barclays.png" alt="Barclays" class="logo-img"> Barclays</div>
+            <div class="logo-item"><img src="../../../assets/hsbc.png" alt="HSBC" class="logo-img"> HSBC</div>
+            <!-- duplicate for loop -->
+            <div class="logo-item"><img src="../../../assets/gs.png" alt="Goldman Sachs" class="logo-img"> Goldman Sachs</div>
+            <div class="logo-item"><img src="../../../assets/jpmc.png" alt="JPMorgan Chase" class="logo-img"> JPMorgan Chase</div>
+            <div class="logo-item"><img src="../../../assets/morgan-stanley.png" alt="Morgan Stanley" class="logo-img"> Morgan Stanley</div>
+            <div class="logo-item"><img src="../../../assets/citi.png" alt="Citigroup" class="logo-img"> Citigroup</div>
+            <div class="logo-item"><img src="../../../assets/bofa.png" alt="Bank of America" class="logo-img"> Bank of America</div>
+            <div class="logo-item"><img src="../../../assets/deutsche.png" alt="Deutsche Bank" class="logo-img"> Deutsche Bank</div>
+            <div class="logo-item"><img src="../../../assets/barclays.png" alt="Barclays" class="logo-img"> Barclays</div>
+            <div class="logo-item"><img src="../../../assets/hsbc.png" alt="HSBC" class="logo-img"> HSBC</div>
+        </div>
+    </section>
+
+    <!-- industry & cities section -->
+    <section class="industry-section">
+        <div class="section-header">
+            <div class="section-badge">
+                <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                Six Sectors • Six Global Hubs
+            </div>
+            <h2 class="section-title">Global Financial Landscape</h2>
+            <p class="section-description">
+                Comprehensive coverage across major financial sectors and world-leading financial centers
+            </p>
+        </div>
+
+        <div class="industry-grid-container">
+            <!-- industry cards -->
+            <div class="industry-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="22" x2="21" y2="22"></line>
+                            <line x1="6" y1="18" x2="6" y2="11"></line>
+                            <line x1="10" y1="18" x2="10" y2="11"></line>
+                            <line x1="14" y1="18" x2="14" y2="11"></line>
+                            <line x1="18" y1="18" x2="18" y2="11"></line>
+                            <polygon points="12 2 20 7 4 7"></polygon>
+                        </svg>
+                    </div>
+                    <h3 class="industry-title">Investment Banking</h3>
+                    <p class="industry-description">M&A, IPOs, debt & equity capital markets</p>
+                    <div class="industry-footer">
+                        <div class="industry-modules">18 modules available</div>
+                        <div class="industry-progress">
+                            <div class="industry-progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="20" x2="12" y2="10"></line>
+                            <line x1="18" y1="20" x2="18" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="16"></line>
+                        </svg>
+                    </div>
+                    <h3 class="industry-title">Capital Markets</h3>
+                    <p class="industry-description">Equity, fixed income, derivatives trading</p>
+                    <div class="industry-footer">
+                        <div class="industry-modules">15 modules available</div>
+                        <div class="industry-progress">
+                            <div class="industry-progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                            <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="industry-title">Asset Management</h3>
+                    <p class="industry-description">Portfolio management, hedge funds, PE</p>
+                    <div class="industry-footer">
+                        <div class="industry-modules">14 modules available</div>
+                        <div class="industry-progress">
+                            <div class="industry-progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                    </div>
+                    <h3 class="industry-title">Corporate Finance</h3>
+                    <p class="industry-description">Financial planning, valuation, treasury</p>
+                    <div class="industry-footer">
+                        <div class="industry-modules">12 modules available</div>
+                        <div class="industry-progress">
+                            <div class="industry-progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16.5 9.4l-9-5.19M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3 class="industry-title">Real Estate</h3>
+                    <p class="industry-description">Commercial RE, REITs, development</p>
+                    <div class="industry-footer">
+                        <div class="industry-modules">11 modules available</div>
+                        <div class="industry-progress">
+                            <div class="industry-progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="industry-title">Insurance & Risk</h3>
+                    <p class="industry-description">Underwriting, actuarial, reinsurance</p>
+                    <div class="industry-footer">
+                        <div class="industry-modules">10 modules available</div>
+                        <div class="industry-progress">
+                            <div class="industry-progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- financial cities list -->
+            <div class="cities-list">
+                <div class="city-item">
+                    <div class="city-image" style="background-image: url('../../../assets/nyc.png');">
+                        <div class="city-overlay"></div>
+                    </div>
+                    <div class="city-info">
+                        <h4 class="city-name">New York</h4>
+                        <p class="city-description">Wall Street Hub</p>
+                    </div>
+                </div>
+
+                <div class="city-item">
+                    <div class="city-image" style="background-image: url('../../../assets/london.png');">
+                        <div class="city-overlay"></div>
+                    </div>
+                    <div class="city-info">
+                        <h4 class="city-name">London</h4>
+                        <p class="city-description">European Finance</p>
+                    </div>
+                </div>
+
+                <div class="city-item">
+                    <div class="city-image" style="background-image: url('../../../assets/hongkong.png');">
+                        <div class="city-overlay"></div>
+                    </div>
+                    <div class="city-info">
+                        <h4 class="city-name">Hong Kong</h4>
+                        <p class="city-description">Asia Pacific</p>
+                    </div>
+                </div>
+
+                <div class="city-item">
+                    <div class="city-image" style="background-image: url('../../../assets/tokyo.png');">
+                        <div class="city-overlay"></div>
+                    </div>
+                    <div class="city-info">
+                        <h4 class="city-name">Tokyo</h4>
+                        <p class="city-description">Asian Markets</p>
+                    </div>
+                </div>
+
+                <div class="city-item">
+                    <div class="city-image" style="background-image: url('../../../assets/singapore.png');">
+                        <div class="city-overlay"></div>
+                    </div>
+                    <div class="city-info">
+                        <h4 class="city-name">Singapore</h4>
+                        <p class="city-description">APAC Gateway</p>
+                    </div>
+                </div>
+
+                <div class="city-item">
+                    <div class="city-image" style="background-image: url('../../../assets/germany.png');">
+                        <div class="city-overlay"></div>
+                    </div>
+                    <div class="city-info">
+                        <h4 class="city-name">Frankfurt</h4>
+                        <p class="city-description">EU Finance Center</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- keywords scroll -->
+    <section class="keywords-section">
+        <!-- first row - left to right -->
+        <div class="keywords-track keywords-row-1">
+            <div class="keywords-text">M&A • DCF • LBO • IPO • DERIVATIVES • EQUITY • FIXED INCOME • SWAPS • OPTIONS • FUTURES • M&A • DCF • LBO • IPO • DERIVATIVES • EQUITY • FIXED INCOME • SWAPS • OPTIONS • FUTURES</div>
+        </div>
+        <!-- second row - right to left -->
+        <div class="keywords-track keywords-row-2">
+            <div class="keywords-text">PORTFOLIO MANAGEMENT • HEDGE FUNDS • PRIVATE EQUITY • RISK MANAGEMENT • COMPLIANCE • PORTFOLIO MANAGEMENT • HEDGE FUNDS • PRIVATE EQUITY • RISK MANAGEMENT • COMPLIANCE</div>
+        </div>
+        <!-- third row - left to right -->
+        <div class="keywords-track keywords-row-3">
+            <div class="keywords-text">VALUATION • FINANCIAL MODELING • CAPITAL MARKETS • ASSET ALLOCATION • DUE DILIGENCE • VALUATION • FINANCIAL MODELING • CAPITAL MARKETS • ASSET ALLOCATION • DUE DILIGENCE</div>
+        </div>
+    </section>
+
+    <!-- capabilities section -->
+    <section class="capabilities-section">
+        <div class="capabilities-background"></div>
+
+        <div class="section-header">
+            <div class="section-badge">
+                <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                </svg>
+                Platform Features
+            </div>
+            <h2 class="section-title">Why Choose FinLit</h2>
+        </div>
+
+        <div class="capabilities-grid">
+            <div class="capability-card">
+                <div class="capability-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <circle cx="12" cy="12" r="6"></circle>
+                        <circle cx="12" cy="12" r="2"></circle>
+                    </svg>
+                </div>
+                <div class="capability-content">
+                    <h3 class="capability-title">Industry-Specific Curriculum</h3>
+                    <p class="capability-description">Deep domain expertise across six major financial sectors</p>
+                </div>
+            </div>
+
+            <div class="capability-card">
+                <div class="capability-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                </div>
+                <div class="capability-content">
+                    <h3 class="capability-title">Advanced Financial Modeling</h3>
+                    <p class="capability-description">DCF, LBO, M&A models used by top institutions</p>
+                </div>
+            </div>
+
+            <div class="capability-card">
+                <div class="capability-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                </div>
+                <div class="capability-content">
+                    <h3 class="capability-title">Data-Driven Learning</h3>
+                    <p class="capability-description">Real-world case studies and market data integration</p>
+                </div>
+            </div>
+
+            <div class="capability-card">
+                <div class="capability-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                </div>
+                <div class="capability-content">
+                    <h3 class="capability-title">Global Market Perspective</h3>
+                    <p class="capability-description">Coverage of Americas, Europe, and Asia-Pacific markets</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA + contact section -->
+    <section class="cta-dark" id="contactSection">
+        <div class="cta-dark-bg">
+            <div class="cta-dark-orb cta-dark-orb--1"></div>
+            <div class="cta-dark-orb cta-dark-orb--2"></div>
+            <div class="cta-dark-grid"></div>
+        </div>
+
+        <div class="cta-dark-inner">
+            <!-- left column -->
+            <div class="cta-dark-left">
+                <div class="cta-dark-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                    Get Started Today
+                </div>
+                <h2 class="cta-dark-heading">Start Your<br>Learning Journey</h2>
+                <p class="cta-dark-desc">Join thousands of professionals advancing their careers through comprehensive financial education.</p>
+
+                <!-- trust stats -->
+                <div class="cta-dark-stats">
+                    <div class="cta-dark-stat">
+                        <span class="cta-dark-stat-num">100+</span>
+                        <span class="cta-dark-stat-label">Hours of Content</span>
+                    </div>
+                    <div class="cta-dark-stat">
+                        <span class="cta-dark-stat-num">6</span>
+                        <span class="cta-dark-stat-label">Domains</span>
+                    </div>
+                    <div class="cta-dark-stat">
+                        <span class="cta-dark-stat-num">13</span>
+                        <span class="cta-dark-stat-label">Modules</span>
+                    </div>
+                </div>
+
+                <div class="cta-dark-buttons">
+                    <a href="learning.html" class="btn cta-dark-btn-primary">
+                        <span>Begin Training</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                    <a href="markets.html" class="btn cta-dark-btn-ghost">
+                        Explore Markets
+                    </a>
+                </div>
+            </div>
+
+            <!-- right column: contact form -->
+            <div class="cta-dark-right">
+                <div class="cta-dark-form-card">
+                    <div class="cta-dark-form-header">
+                        <div class="cta-dark-form-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="cta-dark-form-title">Get in Touch</h3>
+                            <p class="cta-dark-form-sub">Questions or feedback? We'd love to hear from you.</p>
+                        </div>
+                    </div>
+
+                    <form class="cta-dark-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="e2f970e6-4094-4b52-874c-4ad7ce04fa65">
+                        <input type="hidden" name="subject" value="FinLit Contact Form Submission">
+                        <input type="hidden" name="from_name" value="FinLit Contact Form">
+                        <input type="hidden" name="replyto" id="hiddenReplyTo">
+
+                        <div class="cta-dark-form-row">
+                            <div class="form-group">
+                                <label for="contactName" class="cta-dark-label">Name</label>
+                                <input type="text" id="contactName" name="name" class="cta-dark-input" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail" class="cta-dark-label">Email</label>
+                                <input type="email" id="contactEmail" name="email" class="cta-dark-input" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactSubject" class="cta-dark-label">Subject</label>
+                            <input type="text" id="contactSubject" name="form_subject" class="cta-dark-input" placeholder="What is this about?">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactMessage" class="cta-dark-label">Message</label>
+                            <textarea id="contactMessage" name="message" class="cta-dark-input cta-dark-textarea" placeholder="Your message..." rows="4" required></textarea>
+                        </div>
+
+                        <button type="submit" class="cta-dark-submit" id="contactSubmit">
+                            <span class="submit-text">Send Message</span>
+                            <svg class="submit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+
+                        <div class="form-message form-success" id="formSuccess" style="display:none;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            <span>Message sent successfully! We'll get back to you soon.</span>
+                        </div>
+                        <div class="form-message form-error" id="formError" style="display:none;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="15" y1="9" x2="9" y2="15"></line>
+                                <line x1="9" y1="9" x2="15" y2="15"></line>
+                            </svg>
+                            <span>Something went wrong. Please try again.</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- footer top -->
+            <div class="footer-top">
+                <!-- brand section -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../../../assets/finlit-logo.png" alt="FinLit Logo" class="footer-logo-img">
+                        <h3 class="footer-title">FinLit</h3>
+                    </div>
+                    <p class="footer-description">
+                        Financial Literacy Platform
+                    </p>
+                    <p class="footer-subdesc">
+                        Empowering professionals with institutional-grade learning tools, market data, and career resources.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="X">
+                            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- footer links -->
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Platform</h4>
+                        <ul>
+                            <li><a href="#">Learning Paths</a></li>
+                            <li><a href="#">Resources</a></li>
+                            <li><a href="#">Market Data</a></li>
+                            <li><a href="#">Case Studies</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Tools</h4>
+                        <ul>
+                            <li><a href="#">Financial Calculators</a></li>
+                            <li><a href="#">Model Templates</a></li>
+                            <li><a href="#">Deal Analysis</a></li>
+                            <li><a href="#">Glossary</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Partners</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- footer bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 FinLit. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/home.js"></script>
+</body>
+</html>
