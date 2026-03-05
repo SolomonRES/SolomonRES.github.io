@@ -25,9 +25,7 @@ document.querySelectorAll('.side-panel-link').forEach(link => {
     link.addEventListener('click', closeMenu);
 });
 
-/* ──────────────────────────────────────────────
-   Contact form — async submit via Web3Forms
-   ────────────────────────────────────────────── */
+/* Contact form — async submit via Web3Forms */
 const contactForm = document.getElementById('contactForm');
 const contactEmail = document.getElementById('contactEmail');
 const hiddenReplyTo = document.getElementById('hiddenReplyTo');

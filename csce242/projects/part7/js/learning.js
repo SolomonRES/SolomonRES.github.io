@@ -24,9 +24,7 @@ document.querySelectorAll('.side-panel-link').forEach(link => {
     link.addEventListener('click', closeMenu);
 });
 
-/* ──────────────────────────────────────────────
-   SVG icon templates used by the domain cards
-   ────────────────────────────────────────────── */
+/* SVG icon templates used by the domain cards */
 const DOMAIN_ICONS = {
     ib: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
@@ -87,14 +85,10 @@ const CLOCK_SVG = `<svg class="meta-icon" viewBox="0 0 24 24" fill="none"
     <circle cx="12" cy="12" r="10"></circle>
     <polyline points="12 6 12 12 16 14"></polyline></svg>`;
 
-/* ──────────────────────────────────────────────
-   JSON URL (hosted on GitHub Pages)
-   ────────────────────────────────────────────── */
+/* JSON URL (hosted on GitHub) */
 const JSON_URL = 'https://solomonres.github.io/csce242/projects/part7/json/modules.json';
 
-/* ──────────────────────────────────────────────
-   Helper — group an array by a key
-   ────────────────────────────────────────────── */
+/* Helper — group an array by a key */
 function groupBy(arr, key) {
     return arr.reduce((acc, item) => {
         const k = item[key];
@@ -104,9 +98,7 @@ function groupBy(arr, key) {
     }, {});
 }
 
-/* ──────────────────────────────────────────────
-   Build a single module-item element
-   ────────────────────────────────────────────── */
+/* Build a single module-item element */
 function buildModuleItem(mod) {
     const isLocked = mod.status === 'locked';
     const tag = isLocked ? 'div' : 'a';
@@ -142,9 +134,7 @@ function buildModuleItem(mod) {
     </${tag}>`;
 }
 
-/* ──────────────────────────────────────────────
-   Build a full domain card
-   ────────────────────────────────────────────── */
+/* Build a domain card */
 function buildDomainCard(domainName, domainKey, modules, isFirst) {
     const completedCount = modules.filter(m => m.status === 'completed').length;
     const pct = Math.round((completedCount / modules.length) * 100);
@@ -180,9 +170,7 @@ function buildDomainCard(domainName, domainKey, modules, isFirst) {
     </div>`;
 }
 
-/* ──────────────────────────────────────────────
-   Update the hero progress stats
-   ────────────────────────────────────────────── */
+/* Update the hero progress stats */
 function updateProgress(modules) {
     const total = modules.length;
     const done = modules.filter(m => m.status === 'completed').length;
@@ -197,9 +185,7 @@ function updateProgress(modules) {
     if (footerEl) footerEl.textContent = `${done} of ${total} modules completed`;
 }
 
-/* ──────────────────────────────────────────────
-   Attach accordion behaviour to freshly-built cards
-   ────────────────────────────────────────────── */
+/* Attach accordion behaviour to freshly-built cards */
 function attachAccordionListeners() {
     document.querySelectorAll('.domain-header').forEach(header => {
         header.addEventListener('click', () => {
@@ -220,9 +206,7 @@ function attachAccordionListeners() {
     });
 }
 
-/* ──────────────────────────────────────────────
-   Main — fetch JSON, render, wire up
-   ────────────────────────────────────────────── */
+/* Main — fetch JSON, render, wire up */
 async function loadModules() {
     const container = document.getElementById('domainsContainer');
     const loader = document.getElementById('loadingIndicator');
