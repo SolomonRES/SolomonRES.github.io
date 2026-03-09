@@ -187,6 +187,11 @@ function updateProgress(modules) {
 
 /* Attach accordion behaviour to freshly-built cards */
 function attachAccordionListeners() {
+    // set initial max-height for any card that starts open
+    document.querySelectorAll('.domain-modules.open').forEach(m => {
+        m.style.maxHeight = m.scrollHeight + 'px';
+    });
+
     document.querySelectorAll('.domain-header').forEach(header => {
         header.addEventListener('click', () => {
             const card = header.closest('.domain-card');
@@ -194,19 +199,34 @@ function attachAccordionListeners() {
             const isOpen = modules.classList.contains('open');
 
             // close all
-            document.querySelectorAll('.domain-modules').forEach(m => m.classList.remove('open'));
+            document.querySelectorAll('.domain-modules.open').forEach(m => {
+                m.style.maxHeight = m.scrollHeight + 'px';
+                requestAnimationFrame(() => {
+                    m.style.maxHeight = '0px';
+                });
+                m.classList.remove('open');
+            });
             document.querySelectorAll('.domain-header').forEach(h => h.setAttribute('aria-expanded', 'false'));
 
             // toggle clicked
             if (!isOpen) {
                 modules.classList.add('open');
+                modules.style.maxHeight = modules.scrollHeight + 'px';
                 header.setAttribute('aria-expanded', 'true');
+
+                // after transition, allow natural height for dynamic content
+                modules.addEventListener('transitionend', function handler() {
+                    if (modules.classList.contains('open')) {
+                        modules.style.maxHeight = 'none';
+                    }
+                    modules.removeEventListener('transitionend', handler);
+                });
             }
         });
     });
 }
 
-/* Main — fetch JSON, render, wire up */
+/* main to the fetch JSON, render, wire up */
 async function loadModules() {
     const container = document.getElementById('domainsContainer');
     const loader = document.getElementById('loadingIndicator');

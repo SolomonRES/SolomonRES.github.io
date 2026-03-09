@@ -27,6 +27,53 @@ document.querySelectorAll('.side-panel-link').forEach(link => {
 // set update time
 document.getElementById('marketTime').textContent = new Date().toLocaleTimeString();
 
+// ---------- TRADINGVIEW MOBILE SIDEBAR TOGGLE (iframe) ----------
+(function () {
+    const iframe = document.querySelector('.tradingview-iframe');
+    if (!iframe) return;
+    function updateSidebar() {
+        const src = iframe.getAttribute('src');
+        if (window.innerWidth <= 600 && src.includes('hidesidetoolbar=0')) {
+            iframe.setAttribute('src', src.replace('hidesidetoolbar=0', 'hidesidetoolbar=1'));
+        } else if (window.innerWidth > 600 && src.includes('hidesidetoolbar=1')) {
+            iframe.setAttribute('src', src.replace('hidesidetoolbar=1', 'hidesidetoolbar=0'));
+        }
+    }
+    updateSidebar();
+    let resizeTimer;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(updateSidebar, 300);
+    });
+})();
+
+// ---------- TRADINGVIEW FULLSCREEN (iframe) ----------
+(function () {
+    const wrapper = document.getElementById('tradingviewWrapper');
+    const btn = document.getElementById('tradingviewFullscreenBtn');
+    if (!wrapper || !btn) return;
+
+    const enterIcon = '<polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line>';
+    const exitIcon = '<polyline points="4 14 10 14 10 20"></polyline><polyline points="20 10 14 10 14 4"></polyline><line x1="14" y1="10" x2="21" y2="3"></line><line x1="3" y1="21" x2="10" y2="14"></line>';
+
+    btn.addEventListener('click', function () {
+        if (!document.fullscreenElement) {
+            wrapper.requestFullscreen();
+        } else {
+            document.exitFullscreen();
+        }
+    });
+
+    document.addEventListener('fullscreenchange', function () {
+        const svg = btn.querySelector('svg');
+        if (document.fullscreenElement === wrapper) {
+            svg.innerHTML = exitIcon;
+        } else {
+            svg.innerHTML = enterIcon;
+        }
+    });
+})();
+
 // ---------- CANVAS CHARTS ----------
 
 // S&P 500 area chart

@@ -204,9 +204,17 @@
                     </div>
                     <p class="tradingview-desc">Real-time S&P 500 chart powered by TradingView. Interact with indicators, time-frames, and drawing tools.</p>
                 </div>
-                <div class="tradingview-wrapper glass-card">
+                <div class="tradingview-wrapper" id="tradingviewWrapper">
+                    <button class="tradingview-fullscreen-btn" id="tradingviewFullscreenBtn" title="Toggle fullscreen">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <polyline points="9 21 3 21 3 15"></polyline>
+                            <line x1="21" y1="3" x2="14" y2="10"></line>
+                            <line x1="3" y1="21" x2="10" y2="14"></line>
+                        </svg>
+                    </button>
                     <iframe
-                        src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_widget&symbol=AMEX%3ASPY&interval=D&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=%5B%5D&theme=dark&style=1&timezone=America%2FNew_York&withdateranges=1&showpopupbutton=1&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&showpopupbutton=1&locale=en&utm_source=localhost&utm_medium=widget_new&utm_campaign=chart"
+                        src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_widget&symbol=AMEX%3ASPY&interval=D&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=%5B%5D&theme=light&style=1&timezone=America%2FNew_York&withdateranges=1&showpopupbutton=1&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&showpopupbutton=1&locale=en&utm_source=localhost&utm_medium=widget_new&utm_campaign=chart"
                         title="TradingView S&P 500 Chart"
                         class="tradingview-iframe"
                         allowtransparency="true"
