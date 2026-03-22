@@ -1,186 +1,217 @@
+/* ─── Design Tokens ─────────────────────────────────────────────────── */
 :root {
-  --garnet: #73000A;
-  --text: #1b1b1b;
-  --gray: #6f6f6f;
-  --border: #d9d9d6;
+  /* Brand */
+  --garnet:         #73000A;
+  --garnet-dark:    #4f0007;
+  --garnet-mid:     #8c000c;
+
+  /* Text */
+  --text:           #111827;
+  --text-sub:       #374151;
+  --text-muted:     #6b7280;
+
+  /* Surfaces */
+  --page-bg:        #ffffff;
+  --surface:        #ffffff;
+  --border:         #e5e7eb;
+  --border-light:   #eeede9;
+
+  /* Shadows */
+  --shadow-sm:      0 1px 3px rgba(0,0,0,.07), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md:      0 4px 16px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.04);
+  --shadow-hover:   0 20px 44px rgba(0,0,0,.12), 0 6px 14px rgba(0,0,0,.07);
+
+  /* Shape */
+  --radius-sm:      8px;
+  --radius:         16px;
+  --radius-lg:      22px;
+
+  /* Motion */
+  --ease:           cubic-bezier(0.4, 0, 0.2, 1);
+  --dur:            180ms;
 }
 
-* {
-  box-sizing: border-box;
-}
+/* ─── Reset ─────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
 
+/* ─── Page ──────────────────────────────────────────────────────────── */
 body#page {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
   color: var(--text);
-  background: white;
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* ─── Content Shell ─────────────────────────────────────────────────── */
 #content {
   max-width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
+  margin: 0 auto;
+  padding: 20px 20px 48px;
 }
 
-/* header */
+/* ─── Header ────────────────────────────────────────────────────────── */
 #header {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-/* USC logo */
 #usc-logo {
-  width: 320px;
+  width: 260px;
   height: auto;
   display: block;
+  flex-shrink: 0;
 }
 
-/* vertical divider */
 #vertical-divider {
   width: 1px;
-  height: 80px;
+  height: 68px;
   background: var(--border);
+  flex-shrink: 0;
 }
 
 #main-heading {
   margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
   color: var(--garnet);
+  letter-spacing: -0.3px;
 }
 
 #name-heading {
   margin: 4px 0 0;
-  color: var(--gray);
-  font-weight: 300;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-muted);
 }
 
-/* section headings */
-.section {
-  margin-top: 20px;
-}
-
-/* horizontal dividers */
+/* ─── Dividers ──────────────────────────────────────────────────────── */
 .divider {
   border: none;
   border-top: 1px solid var(--border);
-  margin: 24px 0;
+  margin: 20px 0;
 }
 
-/* course section */
+/* ─── Section ───────────────────────────────────────────────────────── */
+.section {
+  margin-top: 16px;
+}
+
+.section-eyebrow {
+  margin: 0 0 4px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--garnet);
+}
+
+#assignments-heading,
+#projects-heading {
+  margin: 0 0 14px;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.4px;
+}
+
+/* ─── Course Card ───────────────────────────────────────────────────── */
 .course-card {
-  border-radius: 14px;
-  padding: 16px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-sm);
 }
 
 .course-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 24px;
 }
 
-.course-left {
-  flex: 1 1 auto;
-  min-width: 0;
-}
-
-.course-right {
-  flex: 0 0 auto;
-}
+.course-left  { flex: 1 1 auto; min-width: 0; }
+.course-right { flex: 0 0 auto; }
 
 #course-heading {
-  margin: 0 0 8px 0;
+  margin: 0 0 5px;
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--text);
-  font-size: 1.25rem;
 }
 
 #course-description {
   margin: 0;
-  color: #444444;
+  font-size: 0.875rem;
+  color: var(--text-muted);
 }
 
-/* GitHub button */
+/* ─── GitHub Button ─────────────────────────────────────────────────── */
 #repo-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: var(--garnet);
   color: #ffffff;
-  padding: 10px 14px;
-  border-radius: 10px;
+  padding: 10px 20px;
+  border-radius: 50px;
   text-decoration: none;
-  font-weight: 400;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
   white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(115,0,10,.25);
+  transition:
+    background var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    transform  var(--dur) var(--ease);
 }
 
 #repo-button:hover,
-#repo-button:focus {
-  background: #4f0007;
+#repo-button:focus-visible {
+  background: var(--garnet-dark);
+  box-shadow: 0 4px 16px rgba(115,0,10,.35);
+  transform: translateY(-1px);
+  outline: none;
 }
 
-/* table */
-.table-wrap {
-  margin-top: 14px;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.86);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+/* ─── Assignment Grid ───────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
 }
 
-.table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.table thead th {
-  background: var(--garnet);
-  color: #ffffff;
-  padding: 10px;
-  text-align: left;
-}
-
-.table td {
-  padding: 10px;
-  border-top: 1px solid var(--border);
-}
-
-.table tbody tr:nth-child(even) td {
-  background: #f4f4f4;
-}
-
-/* assignments & cards */
-.grid,
+/* ─── Project Row ───────────────────────────────────────────────────── */
 .project-row {
   display: flex;
   gap: 16px;
-  flex-wrap: wrap;
-}
-
-.project-row {
   flex-wrap: nowrap;
+  align-items: stretch;
 }
 
+/* ─── Card ──────────────────────────────────────────────────────────── */
 .card {
-  flex: 1 1 320px;
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius);
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.86);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform     var(--dur) var(--ease),
+    box-shadow    var(--dur) var(--ease),
+    border-color  var(--dur) var(--ease);
 }
 
 .card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(115, 0, 10, 0.35);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
+  transform: translateY(-4px);
+  border-color: rgba(115, 0, 10, 0.28);
+  box-shadow: var(--shadow-hover);
 }
 
 .card-hit {
@@ -189,21 +220,16 @@ body#page {
   text-decoration: none;
 }
 
-/* media */
+/* ─── Card Media ────────────────────────────────────────────────────── */
 .card-media {
   position: relative;
   width: 100%;
   overflow: hidden;
-  background: #ffffff;
+  background: var(--border-light);
 }
 
-.card-media-wide {
-  aspect-ratio: 16 / 9;
-}
-
-.card-media-portrait {
-  aspect-ratio: 324 / 418;
-}
+.card-media-wide     { aspect-ratio: 16 / 9; }
+.card-media-portrait { aspect-ratio: 324 / 418; }
 
 .card-img,
 .card-iframe {
@@ -212,49 +238,29 @@ body#page {
   display: block;
 }
 
-.card-img {
-  object-fit: cover;
-}
-
-.card-img-portrait {
-  object-fit: contain;
-  background: #ffffff;
-}
+.card-img         { object-fit: cover; }
+.card-img-portrait { object-fit: contain; background: var(--surface); }
 
 .card-body {
-  padding: 12px;
+  padding: 12px 14px;
 }
 
 .card-title {
-  margin: 0 0 6px 0;
+  margin: 0 0 4px;
+  font-size: 0.92rem;
+  font-weight: 600;
   color: var(--garnet);
-  font-size: 1.05rem;
+  letter-spacing: -0.1px;
 }
 
 .card-desc {
   margin: 0;
-  color: #555555;
-  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
 }
 
-.card-repo-link {
-  display: block;
-  padding: 8px 12px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--garnet);
-  text-decoration: none;
-  border-top: 1px solid #e0e0e0;
-  text-align: center;
-  transition: background 140ms ease, color 140ms ease;
-}
-
-.card-repo-link:hover {
-  background: var(--garnet);
-  color: #ffffff;
-}
-
-/* overlay */
+/* ─── Card Overlay ──────────────────────────────────────────────────── */
 .card-overlay {
   position: absolute;
   inset: 0;
@@ -262,9 +268,11 @@ body#page {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.22);
   opacity: 0;
-  transition: opacity 140ms ease;
+  transition: opacity var(--dur) var(--ease);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 .card:hover .card-overlay,
@@ -272,53 +280,41 @@ body#page {
   opacity: 1;
 }
 
-.card-icon {
-  width: 32px;
-  height: 32px;
-  display: block;
-}
+.card-icon         { width: 30px; height: 30px; display: block; }
+.card-overlay-text { color: #fff; font-weight: 700; font-size: 0.875rem; }
 
-.card-overlay-text {
-  color: #ffffff;
-  font-weight: 700;
-}
-
-/* project links grid (React + Render) */
+/* ─── Project Links Grid ────────────────────────────────────────────── */
 .project-links-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
+  border-top: 1px solid var(--border);
 }
 
 .project-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 12px;
-  font-size: 0.85rem;
+  padding: 13px 10px;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--garnet);
   text-decoration: none;
-  border-top: 1px solid #e0e0e0;
   text-align: center;
-  transition: background 140ms ease, color 140ms ease;
+  line-height: 1.3;
+  transition:
+    background var(--dur) var(--ease),
+    color      var(--dur) var(--ease);
 }
 
-.project-link:nth-child(odd) {
-  border-right: 1px solid #e0e0e0;
-}
+.project-link:nth-child(odd)  { border-right: 1px solid var(--border); }
+.project-link:nth-child(n+3) { border-top: 1px solid var(--border); }
 
 .project-link:hover {
   background: var(--garnet);
   color: #ffffff;
 }
 
-/* project layout: keep cards horizontal on desktop */
-.project-row {
-  flex-wrap: nowrap;
-  align-items: stretch;
-}
-
+/* ─── Project Card Sizes ────────────────────────────────────────────── */
 .project-card-main {
   flex: 1 1 420px;
   min-width: 320px;
@@ -340,69 +336,82 @@ body#page {
 .project-card-side .card-media-wide {
   flex: 1 1 auto;
   aspect-ratio: auto;
+  min-height: 180px;
 }
 
-.project-card-side .card-body {
-  flex: 0 0 auto;
-}
+.project-card-side .card-body { flex: 0 0 auto; }
+.project-card-side .card-img  { object-fit: cover; background: var(--surface); }
 
-.project-card-side .card-img {
-  object-fit: cover;
-  background: #ffffff;
-}
-
-/* footer */
+/* ─── Footer ────────────────────────────────────────────────────────── */
 #footer {
-  margin-top: 40px;
+  margin-top: 32px;
+  padding-top: 20px;
   border-top: 1px solid var(--border);
-  padding-top: 12px;
-  color: #777;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-align: center;
 }
 
-/* responsive */
+/* ─── Responsive: Tablet ────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .project-row {
     flex-wrap: wrap;
   }
 
   .project-card-side {
-    flex: 1 1 320px;
+    flex: 1 1 300px;
     min-width: 0;
   }
 }
 
-/* mobile */
-@media (max-width: 768px) {
+/* ─── PDF Row: 2-col on mobile ──────────────────────────────────────── */
+@media (max-width: 640px) {
+  .pdf-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+/* ─── Responsive: Mobile ────────────────────────────────────────────── */
+@media (max-width: 640px) {
   #content {
-    margin: 0;
-    padding: 14px;
+    padding: 16px 14px 48px;
   }
 
   #header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 12px;
   }
 
   #usc-logo {
     width: 100%;
-    max-width: 390px;
+    max-width: 260px;
   }
 
-  #vertical-divider {
-    display: none;
-  }
+  #vertical-divider { display: none; }
+
+  #main-heading { font-size: 1.15rem; }
 
   .course-row {
     flex-direction: column;
     align-items: stretch;
+    gap: 14px;
   }
 
   #repo-button {
     width: 100%;
-    text-align: center;
+    justify-content: center;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 
   .project-card-side {
-    flex: 1 1 auto;
+    flex: 1 1 100%;
+    min-width: 0;
   }
 }
