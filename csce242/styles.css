@@ -294,6 +294,7 @@ body#page {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 6px;
   padding: 13px 10px;
   font-size: 0.78rem;
   font-weight: 600;
