@@ -151,6 +151,7 @@ img, svg {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -274,6 +275,7 @@ img, svg {
   position: sticky;
   top: 98px;
   max-width: 430px;
+  min-width: 0;
 }
 
 .hero-kicker,
@@ -400,6 +402,7 @@ img, svg {
 
 .hero-projects {
   min-width: 0;
+  width: 100%;
 }
 
 .hero-projects-label {
@@ -418,6 +421,7 @@ img, svg {
   flex-direction: column;
   gap: 12px;
   padding: 24px;
+  min-width: 0;
 }
 
 .project-card:hover {
@@ -464,6 +468,7 @@ img, svg {
   font-size: 21px;
   line-height: 1.2;
   letter-spacing: -0.03em;
+  overflow-wrap: anywhere;
 }
 
 .card-desc {
@@ -471,6 +476,7 @@ img, svg {
   font-size: 14px;
   line-height: 1.78;
   color: var(--text-2);
+  overflow-wrap: anywhere;
 }
 
 .card-footer {
@@ -670,6 +676,10 @@ img, svg {
 }
 
 .footer-link {
+  overflow-wrap: anywhere;
+}
+
+.footer-link {
   transition: color var(--t);
 }
 
@@ -708,6 +718,8 @@ img, svg {
     grid-template-columns: 1fr;
     gap: 28px;
     padding-top: 54px;
+    padding-bottom: 64px;
+    min-height: auto;
   }
 
   .hero-copy {
@@ -718,6 +730,10 @@ img, svg {
 
   .hero-projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    min-height: 0;
   }
 
   .market-widget-quote {
@@ -731,14 +747,54 @@ img, svg {
   }
 }
 
+@media (max-width: 860px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-shell {
+    gap: 24px;
+    padding-top: 40px;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .hero-descriptor {
+    max-width: 100%;
+  }
+
+  .market-widget-quote,
+  .market-widget-spark {
+    display: none;
+  }
+
+  .market-widget-bars {
+    left: auto;
+    right: 5%;
+    bottom: 18%;
+    width: 200px;
+  }
+}
+
 @media (max-width: 720px) {
   .container,
   .header-inner {
     padding-inline: 18px;
   }
 
+  .header-inner {
+    row-gap: 8px;
+    padding-block: 10px;
+  }
+
   .nav-link:not(.nav-link-icon) {
     display: none;
+  }
+
+  .nav {
+    margin-left: auto;
   }
 
   .hero-heading {
@@ -752,6 +808,8 @@ img, svg {
   .hero-descriptor {
     max-width: 100%;
     font-size: 12px;
+    line-height: 1.7;
+    letter-spacing: 0.06em;
   }
 
   .market-widget {
@@ -768,6 +826,65 @@ img, svg {
 
   .footer-inner {
     padding-block: 20px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-shell {
+    padding-top: 28px;
+    padding-bottom: 48px;
+  }
+
+  .hero-heading {
+    font-size: clamp(46px, 19vw, 68px);
+    line-height: 0.94;
+    margin-bottom: 8px;
+  }
+
+  .hero-subname {
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .project-card {
+    padding: 18px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card-desc {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .market-tickers {
+    bottom: 3%;
+    gap: 8px;
+  }
+
+  .ticker-chip {
+    min-height: 24px;
+    padding: 0 10px;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .footer-links {
+    gap: 10px;
+    flex-direction: column;
     align-items: flex-start;
   }
 }
